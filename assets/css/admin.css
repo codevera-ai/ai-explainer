@@ -1,0 +1,4607 @@
+/**
+ * Admin styles for WP AI Explainer
+ */
+
+/* =============================================================================
+   Job Queue Loading States & Animations
+   ============================================================================= */
+
+/* Loading button state */
+.button.loading {
+    background-color: #ccc !important;
+    border-color: #bbb !important;
+    color: #888 !important;
+    cursor: not-allowed !important;
+    position: relative;
+}
+
+.button.loading:hover {
+    background-color: #ccc !important;
+    border-color: #bbb !important;
+}
+
+/* Rotating loading icon */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #888;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 5px;
+}
+
+/* Job fade-out animation */
+.job-item {
+    transition: all 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform-origin: top;
+    overflow: hidden;
+}
+
+.job-item.fading-out {
+    opacity: 0;
+    height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    transform: scaleY(0);
+}
+
+/* =============================================================================
+   Settings Page Layout
+   ============================================================================= */
+
+.explainer-admin-wrap {
+    max-width: 1200px;
+}
+
+.explainer-admin-header {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #8b5cf6;
+}
+
+.explainer-admin-header p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.explainer-admin-tabs {
+    margin-bottom: 20px;
+}
+
+.explainer-admin-tabs .nav-tab-wrapper {
+    border-bottom: 1px solid #ccc;
+}
+
+.explainer-admin-actions {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.explainer-admin-actions h2 {
+    margin-top: 0;
+    color: #23282d;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.explainer-admin-actions .button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* =============================================================================
+   Help and Support Tab Styles
+   ============================================================================= */
+
+.help-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.help-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #23282d;
+    border-bottom: 2px solid #8b5cf6;
+    padding-bottom: 8px;
+}
+
+.help-section h4 {
+    font-size: 18px !important;
+}
+
+.help-feature p,
+.help-blog-creator p,
+.help-rate-limiting p {
+    font-size: 15px !important;
+}
+
+.help-blog-creator li,
+.help-rate-limiting li {
+    font-size: 15px !important;
+}
+
+.help-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.help-step {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #10b981;
+}
+
+.help-step h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1d2327;
+    font-size: 18px !important;
+    font-weight: 600;
+}
+
+.help-step p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.help-step ul {
+    margin-left: 20px;
+}
+
+.help-step li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.help-usage ol {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+.help-usage li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.help-feature {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.help-feature h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #8b5cf6;
+    font-weight: 600;
+    font-size: 18px !important;
+}
+
+.help-feature ul {
+    margin-left: 20px;
+}
+
+.help-feature li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.help-troubleshooting {
+    display: grid;
+    gap: 20px;
+}
+
+.help-issue {
+    padding: 15px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    border-left: 4px solid #f39c12;
+}
+
+.help-issue h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #856404;
+    font-weight: 600;
+    font-size: 18px !important;
+}
+
+.help-issue ul {
+    margin-left: 20px;
+}
+
+.help-issue li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+    color: #856404;
+    font-size: 15px;
+}
+
+.help-costs ul {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+.help-costs li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Support tab styles */
+.support-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.support-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #23282d;
+    border-bottom: 2px solid #8b5cf6;
+    padding-bottom: 8px;
+}
+
+.developer-info p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.developer-info strong {
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.project-links p {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.project-links .description {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+.support-options {
+    display: grid;
+    gap: 20px;
+}
+
+.support-option {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #8b5cf6;
+}
+
+.support-option h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1d2327;
+    font-weight: 600;
+}
+
+.support-option p {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.support-info-needed {
+    padding: 15px;
+    background: #e8f4fd;
+    border: 1px solid #b3d9ff;
+    border-radius: 4px;
+}
+
+.support-info-needed p {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.support-info-needed ul {
+    margin-left: 20px;
+}
+
+.support-info-needed li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.contributing-info {
+    padding: 15px;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
+
+.contributing-info p {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #155724;
+}
+
+.contributing-info ul {
+    margin-left: 20px;
+}
+
+.contributing-info li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+    color: #155724;
+    font-size: 15px;
+}
+
+.system-info {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.system-info .form-table {
+    margin-bottom: 0;
+}
+
+.system-info th {
+    width: 200px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.system-info td {
+    font-family: monospace;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+/* Responsive design for help/support tabs */
+@media (max-width: 768px) {
+    .help-steps,
+    .help-troubleshooting,
+    .support-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .help-section,
+    .support-section {
+        padding: 15px;
+    }
+    
+    .help-step,
+    .help-issue,
+    .support-option {
+        padding: 12px;
+    }
+}
+
+#admin-messages {
+    margin-top: 20px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+#admin-messages.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tab-content {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.tab-content h2 {
+    margin-top: 0;
+    color: #23282d;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* =============================================================================
+   Form Field Styling
+   ============================================================================= */
+
+.explainer-admin-wrap .form-table th {
+    vertical-align: top;
+    padding-top: 15px;
+}
+
+.explainer-admin-wrap .form-table input[type="password"],
+.explainer-admin-wrap .form-table input[type="text"],
+.explainer-admin-wrap .form-table input[type="number"],
+.explainer-admin-wrap .form-table select {
+    width: 300px;
+}
+
+.explainer-admin-wrap .form-table input[type="number"] {
+    width: 100px;
+}
+
+.explainer-admin-wrap .form-table .description {
+    margin-top: 5px;
+    color: #666;
+    font-style: italic;
+}
+
+/* =============================================================================
+   API Key Field
+   ============================================================================= */
+
+.api-key-feedback {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 0;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.api-key-feedback.success .valid {
+    color: #10b981;
+}
+
+.api-key-feedback.error .invalid {
+    color: #dc3232;
+}
+
+/* =============================================================================
+   Validation Feedback
+   ============================================================================= */
+
+.duration-feedback,
+.rate-limit-feedback {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+    font-size: 13px;
+    clear: both;
+}
+
+.duration-feedback.success .valid,
+.rate-limit-feedback.success .valid {
+    color: #10b981;
+}
+
+.duration-feedback.error .invalid,
+.rate-limit-feedback.error .invalid {
+    color: #dc3232;
+}
+
+/* =============================================================================
+   Usage Statistics
+   ============================================================================= */
+
+.usage-stats {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.usage-stats h3 {
+    margin-top: 0;
+    color: #23282d;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.stats-section {
+    margin-bottom: 20px;
+}
+
+.stats-section h4 {
+    margin-bottom: 10px;
+    color: #8b5cf6;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.stats-section ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.stats-section li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* =============================================================================
+   Button States
+   ============================================================================= */
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.button.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #8b5cf6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* =============================================================================
+   API Key Status Messages
+   ============================================================================= */
+
+.api-key-status.not-configured {
+    background: #fff3cd !important;
+    border: 1px solid #ffeaa7 !important;
+    border-left: 4px solid #f39c12 !important;
+    border-radius: 4px !important;
+    padding: 12px 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.api-key-status.not-configured strong {
+    color: #856404 !important;
+    font-size: 14px !important;
+}
+
+.api-key-status.not-configured .dashicons {
+    color: #f39c12 !important;
+    margin-right: 5px !important;
+}
+
+.api-key-status.configured {
+    background: #d4edda !important;
+    border: 1px solid #c3e6cb !important;
+    border-left: 4px solid #28a745 !important;
+    border-radius: 4px !important;
+    padding: 12px 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.api-key-status.configured strong {
+    color: #155724 !important;
+    font-size: 14px !important;
+}
+
+.api-key-status.configured .dashicons {
+    margin-right: 5px !important;
+}
+
+/* Enhanced messaging for not-configured state */
+.api-key-status.not-configured span:not(.dashicons) {
+    color: #6c5d03 !important;
+    line-height: 1.4 !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =============================================================================
+   Admin Notices
+   ============================================================================= */
+
+#admin-messages .notice {
+    margin: 15px 0;
+    padding: 12px;
+    border-left: 4px solid #8b5cf6;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+#admin-messages .notice-success {
+    border-left-color: #10b981;
+}
+
+#admin-messages .notice-error {
+    border-left-color: #dc3232;
+}
+
+#admin-messages .notice-info {
+    border-left-color: #8b5cf6;
+}
+
+#admin-messages .notice-warning {
+    border-left-color: #ffb900;
+}
+
+#admin-messages .notice p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =============================================================================
+   Settings Sections - scoped to plugin pages only
+   ============================================================================= */
+
+.explainer-admin-wrap .form-table {
+    margin-top: 20px;
+}
+
+.explainer-admin-wrap .form-table tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.explainer-admin-wrap .form-table tr:last-child {
+    border-bottom: none;
+}
+
+.explainer-admin-wrap .form-table th {
+    font-weight: 600;
+    color: #23282d;
+    padding: 20px 10px 20px 0;
+    width: 200px;
+}
+
+.explainer-admin-wrap .form-table td {
+    padding: 15px 10px;
+}
+
+/* =============================================================================
+   Checkbox Styling - scoped to plugin pages only
+   ============================================================================= */
+
+.explainer-admin-wrap .form-table input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.explainer-admin-wrap .form-table label {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    color: #555;
+}
+
+/* =============================================================================
+   Select Styling - scoped to plugin pages only
+   ============================================================================= */
+
+.explainer-admin-wrap .form-table select {
+    height: 36px;
+    padding: 0 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.explainer-admin-wrap .form-table select:focus {
+    border-color: #8b5cf6;
+    outline: none;
+    box-shadow: 0 0 0 1px #8b5cf6;
+}
+
+/* =============================================================================
+   Input Styling - scoped to plugin pages only
+   ============================================================================= */
+
+.explainer-admin-wrap .form-table input[type="text"],
+.explainer-admin-wrap .form-table input[type="password"],
+.explainer-admin-wrap .form-table input[type="number"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.explainer-admin-wrap .form-table input[type="text"]:focus,
+.explainer-admin-wrap .form-table input[type="password"]:focus,
+.explainer-admin-wrap .form-table input[type="number"]:focus {
+    border-color: #8b5cf6;
+    outline: none;
+    box-shadow: 0 0 0 1px #8b5cf6;
+}
+
+/* =============================================================================
+   Responsive Design
+   ============================================================================= */
+
+@media (max-width: 782px) {
+    .explainer-admin-wrap .form-table th,
+    .explainer-admin-wrap .form-table td {
+        display: block;
+        width: auto;
+        padding: 10px 0;
+    }
+
+    .explainer-admin-wrap .form-table th {
+        padding-bottom: 5px;
+    }
+
+    .explainer-admin-wrap .form-table input[type="password"],
+    .explainer-admin-wrap .form-table input[type="text"],
+    .explainer-admin-wrap .form-table input[type="number"],
+    .explainer-admin-wrap .form-table select {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .explainer-admin-actions .button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    /* Make feedback display below input on mobile */
+    .api-key-feedback,
+    .duration-feedback,
+    .rate-limit-feedback,
+    .field-feedback {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+
+/* =============================================================================
+   New Feature Styles
+   ============================================================================= */
+
+/* Tooltip Preview - Matches Frontend Design */
+.tooltip-preview {
+    margin-top: 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Admin tooltip preview - highly specific selectors to override frontend styles */
+body .explainer-tooltip-preview,
+html body .explainer-tooltip-preview,
+div .explainer-tooltip-preview,
+.explainer-tooltip-preview {
+    position: static !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    
+    /* Box styling - exact match to frontend using same CSS variables */
+    background: #333;
+    color: white;
+    border-radius: 6px;
+    padding: 12px 16px;
+    max-width: 300px;
+    min-width: 200px;
+    margin: 0 auto;
+    
+    /* Typography - use site's paragraph font to match frontend */
+    font-size: 14px;
+    font-family: var(--explainer-site-font, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
+    line-height: 1.4;
+    
+    /* Effects - exact match to frontend using same CSS variables */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    
+    /* Dynamic colour updates */
+    background-color: var(--explainer-tooltip-bg-color, #333) !important;
+    color: var(--explainer-tooltip-text-color, #ffffff) !important;
+}
+
+/* Colour settings table styling */
+.colour-settings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.colour-settings-table td {
+    vertical-align: top;
+    padding: 8px 0;
+}
+
+.colour-settings-table label {
+    display: block;
+    margin-bottom: 0;
+}
+
+.colour-settings-table .wp-color-result {
+    vertical-align: top;
+}
+
+/* Ensure colour picker inputs have consistent styling */
+.color-picker, .color-field {
+    width: 100px !important;
+}
+
+/* Tooltip arrow using pseudo-element - exact match to frontend */
+.explainer-tooltip-preview::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--explainer-tooltip-bg-color, #333);
+}
+
+/* Header styling - exact match to frontend */
+.explainer-tooltip-preview .explainer-tooltip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid color-mix(in srgb, var(--explainer-tooltip-text-color, #ffffff) 20%, transparent);
+}
+
+/* Title styling - exact match to frontend */
+.explainer-tooltip-preview .explainer-tooltip-title {
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    color: inherit;
+}
+
+/* Close button styling - exact match to frontend */
+.explainer-tooltip-preview .explainer-tooltip-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    outline: none;
+}
+
+.explainer-tooltip-preview .explainer-tooltip-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.explainer-tooltip-preview .explainer-tooltip-close:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Content styling - exact match to frontend */
+.explainer-tooltip-preview .explainer-tooltip-content {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: inherit;
+}
+
+/* Footer styling - exact match to frontend */
+.explainer-tooltip-preview .explainer-tooltip-footer {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    line-height: 1.3;
+    opacity: 0.7;
+}
+
+.explainer-tooltip-preview .explainer-disclaimer,
+.explainer-tooltip-preview .explainer-provider {
+    margin: 2px 0;
+    font-style: italic;
+    color: var(--explainer-tooltip-footer-color, rgba(255, 255, 255, 0.8));
+}
+
+.explainer-tooltip-preview .explainer-provider {
+    font-size: 10px;
+}
+
+/* Button Preview */
+.button-preview {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.button-preview h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    /* color: #8b5cf6; */
+    font-size: 14px;
+}
+
+.preview-explainer-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-transform: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.preview-explainer-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.preview-explainer-button svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.preview-explainer-button.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.preview-explainer-button.disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Debug Tools Section */
+.debug-actions {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.debug-actions h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #8b5cf6;
+    font-size: 14px;
+}
+
+.debug-controls,
+.queue-controls {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.debug-controls .button,
+.queue-controls .button {
+    margin: 0;
+}
+
+.debug-actions .button {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+#debug-logs-viewer {
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#debug-logs-viewer pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Field Validation */
+.field-feedback {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 0;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.field-feedback.success .valid {
+    color: #10b981;
+}
+
+.field-feedback.error .invalid {
+    color: #dc3232;
+}
+
+.explainer-admin-wrap .form-table input.error,
+.explainer-admin-wrap .form-table textarea.error,
+.explainer-admin-wrap .form-table select.error {
+    border-color: #dc3232;
+}
+
+.explainer-admin-wrap .form-table input.success,
+.explainer-admin-wrap .form-table textarea.success,
+.explainer-admin-wrap .form-table select.success {
+    border-color: #10b981;
+}
+
+/* Color Picker Integration */
+.wp-picker-container {
+    margin-top: 5px;
+}
+
+.wp-picker-container .wp-color-result {
+    height: 32px;
+    border-radius: 4px;
+}
+
+/* Quick Actions */
+.explainer-admin-actions .button-primary {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+}
+
+.explainer-admin-actions .button-primary:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+/* API Key Visibility Toggle */
+#api-key-status,
+#claude-api-key-status {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+#api-key-status.valid,
+#claude-api-key-status.valid {
+    color: #10b981;
+}
+
+#api-key-status.invalid,
+#claude-api-key-status.invalid {
+    color: #dc3232;
+}
+
+/* Provider-specific field visibility */
+.openai-fields {
+    display: table-row;
+}
+
+.claude-fields {
+    display: none;
+}
+
+/* Model selection optgroups */
+#explainer_api_model optgroup {
+    display: block;
+}
+
+#explainer_api_model optgroup.claude-models {
+    display: none;
+}
+
+/* When Claude provider is selected, show Claude models and hide OpenAI models */
+body.claude-provider #explainer_api_model optgroup.openai-models {
+    display: none;
+}
+
+body.claude-provider #explainer_api_model optgroup.claude-models {
+    display: block;
+}
+
+/* Disabled options styling */
+#explainer_api_model option:disabled {
+    color: #999;
+    background-color: #f5f5f5;
+}
+
+/* Model dropdown styling */
+#explainer_api_model {
+    min-width: 300px;
+}
+
+#explainer_api_model optgroup {
+    font-weight: bold;
+    color: #8b5cf6;
+}
+
+#explainer_api_model option {
+    font-weight: normal;
+    color: #333;
+    padding: 4px 8px;
+}
+
+/* Hide optgroups by default, show based on provider - scoped to plugin pages */
+.explainer-admin-wrap .form-table #explainer_api_model optgroup {
+    display: none;
+}
+
+.explainer-admin-wrap .form-table #explainer_api_model optgroup.openai-models {
+    display: block;
+}
+
+body.claude-provider .explainer-admin-wrap .form-table #explainer_api_model optgroup.openai-models {
+    display: none;
+}
+
+body.claude-provider .explainer-admin-wrap .form-table #explainer_api_model optgroup.claude-models {
+    display: block;
+}
+
+/* Provider selection styling */
+#explainer_api_provider {
+    font-weight: 600;
+    color: #8b5cf6;
+}
+
+/* =============================================================================
+   Custom Prompt Field - scoped to plugin pages only
+   ============================================================================= */
+
+.explainer-admin-wrap .form-table textarea.code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.explainer-admin-wrap .form-table textarea.code:focus {
+    border-color: #8b5cf6;
+    background: #fff;
+    box-shadow: 0 0 0 1px #8b5cf6;
+}
+
+.prompt-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.prompt-actions .button {
+    font-size: 13px;
+    padding: 6px 12px;
+    height: auto;
+    line-height: 1.4;
+}
+
+#prompt-preview {
+    margin-top: 10px;
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+#prompt-preview strong {
+    color: #8b5cf6;
+    font-weight: 600;
+}
+
+.custom-prompt-help {
+    margin-top: 8px;
+    padding: 12px;
+    background: #e7f3ff;
+    border: 1px solid #bee5eb;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.custom-prompt-help strong {
+    color: #8b5cf6;
+}
+
+/* Character count for prompt */
+.prompt-counter {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+
+.prompt-counter.warning {
+    color: #ffb900;
+}
+
+.prompt-counter.error {
+    color: #dc3232;
+}
+
+/* =============================================================================
+   High Contrast Mode
+   ============================================================================= */
+
+@media (prefers-contrast: high) {
+    .explainer-admin-wrap .form-table input[type="text"],
+    .explainer-admin-wrap .form-table input[type="password"],
+    .explainer-admin-wrap .form-table input[type="number"],
+    .explainer-admin-wrap .form-table select {
+        border: 2px solid #000;
+    }
+
+    .explainer-admin-wrap .form-table input[type="text"]:focus,
+    .explainer-admin-wrap .form-table input[type="password"]:focus,
+    .explainer-admin-wrap .form-table input[type="number"]:focus,
+    .explainer-admin-wrap .form-table select:focus {
+        border-color: #8b5cf6;
+        box-shadow: 0 0 0 2px #8b5cf6;
+    }
+    
+    .preview-tooltip {
+        border: 2px solid #000;
+    }
+    
+    .analytics-section,
+    .analytics-dashboard {
+        border: 2px solid #000;
+    }
+}
+
+/* =============================================================================
+   Usage Exceeded Notice Styles
+   ============================================================================= */
+
+.explainer-usage-notice {
+    border-left-color: #dc3232 !important;
+    background: linear-gradient(135deg, #fff2f2 0%, #fef7f7 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(220, 50, 50, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.explainer-usage-notice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #dc3232 0%, #b91c1c 100%);
+}
+
+.explainer-notice-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px 24px;
+}
+
+.explainer-notice-content h3 {
+    margin: 0 0 12px 0;
+    color: #dc3232;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.explainer-notice-content h3::before {
+    content: '⚠️';
+    font-size: 20px;
+}
+
+.explainer-notice-content p {
+    margin: 12px 0;
+    line-height: 1.6;
+    color: #444;
+}
+
+.explainer-notice-content p strong {
+    color: #dc3232;
+    font-weight: 600;
+}
+
+.explainer-usage-notice .explainer-notice-content p:first-of-type {
+    font-size: 15px;
+    font-weight: 500;
+    color: #721c24;
+    background: rgba(220, 50, 50, 0.05);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin: 16px 0;
+    border-left: 3px solid #dc3232;
+}
+
+.explainer-notice-actions {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(220, 50, 50, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.explainer-notice-actions .button {
+    margin: 0;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 12px;
+}
+
+.explainer-notice-actions .button-primary {
+    background: linear-gradient(135deg, #dc3232 0%, #b91c1c 100%);
+    border-color: #dc3232;
+    box-shadow: 0 2px 4px rgba(220, 50, 50, 0.2);
+}
+
+.explainer-notice-actions .button-primary:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(220, 50, 50, 0.3);
+}
+
+.explainer-notice-actions .button:not(.button-primary) {
+    border-color: #dc3232;
+    color: #dc3232;
+    background: transparent;
+}
+
+.explainer-notice-actions .button:not(.button-primary):hover {
+    background: #dc3232;
+    color: white;
+    transform: scale(1.02);
+}
+
+.explainer-reenable-btn:disabled,
+.explainer-dismiss-notice-btn:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* =============================================================================
+   Popular Selections Dashboard
+   ============================================================================= */
+
+.popular-selections-dashboard {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.dashboard-controls {
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #e1e5e9;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.dashboard-controls input[type="text"],
+.dashboard-controls select {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.dashboard-controls input[type="text"]:focus,
+.dashboard-controls select:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+    outline: none;
+}
+
+#selections-summary {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* Loading states */
+#selections-loading {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#selections-loading .spinner {
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+/* Table styling */
+#selections-table {
+    margin-top: 0;
+}
+
+/* Set all table rows to grey background */
+#selections-table tbody tr,
+#selections-table tbody tr.alternate,
+#selections-table tbody tr:nth-child(odd),
+#selections-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5 !important;
+}
+
+#selections-table th {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+    color: #23282d;
+}
+
+#selections-table .selection-text {
+    line-height: 1.4;
+    word-break: break-word;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Sources section in explanation area */
+.source-urls-section {
+    margin-top: 15px;
+}
+
+.source-urls-section h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #8b5cf6;
+    font-weight: 600;
+}
+
+.source-urls-list {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.source-urls-list ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.source-urls-list li {
+    margin-bottom: 5px;
+}
+
+.source-urls-list a {
+    color: #8b5cf6;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.source-urls-list a:hover {
+    text-decoration: underline;
+}
+
+/* Better alignment for the text content within the first column */
+#selections-table td:first-child > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 32px;
+    justify-content: flex-start;
+}
+
+/* Ensure the arrow and text are properly aligned */
+#selections-table .show-explanation-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Left-align the selected text content */
+#selections-table .selection-text strong {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+/* Clickable text styling */
+#selections-table .clickable-text {
+    cursor: pointer;
+    color: #8b5cf6;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 4px 6px;
+    margin: -4px -6px;
+    transition: all 0.2s ease;
+}
+
+#selections-table .clickable-text:hover {
+    background-color: rgba(0, 115, 170, 0.1);
+    text-decoration: underline;
+    color: #005177;
+}
+
+#selections-table .create-blog-post-btn {
+    background: #f0f0f1 !important;
+    color: #50575e !important;
+    border: 1px solid #c3c4c7 !important;
+    padding: 6px 12px !important;
+    border-radius: 3px !important;
+    cursor: pointer;
+    font-size: 13px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    display: inline-block !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    font-weight: normal !important;
+}
+
+#selections-table .create-blog-post-btn:hover {
+    background: #f6f7f7 !important;
+    color: #50575e !important;
+    border-color: #8c8f94 !important;
+    text-decoration: none !important;
+}
+
+#selections-table .create-blog-post-btn:disabled {
+    background: #f6f7f7 !important;
+    color: #a7aaad !important;
+    border-color: #dcdcde !important;
+    cursor: not-allowed !important;
+    text-decoration: none !important;
+}
+
+/* Table layout with percentage-based column widths */
+#selections-table {
+    table-layout: fixed !important;
+    width: 100% !important;
+}
+
+#selections-table th,
+#selections-table td {
+    vertical-align: middle !important;
+    padding: 12px 8px !important;
+}
+
+#selections-table th:nth-child(1),
+#selections-table td:nth-child(1) {
+    width: 32% !important;
+    vertical-align: middle !important;
+}
+
+#selections-table th:nth-child(2),
+#selections-table td:nth-child(2) {
+    width: 10% !important;
+    text-align: center;
+}
+
+#selections-table th:nth-child(3),
+#selections-table td:nth-child(3) {
+    width: 15% !important;
+    text-align: center;
+}
+
+#selections-table th:nth-child(4),
+#selections-table td:nth-child(4) {
+    width: 15% !important;
+    text-align: center;
+}
+
+#selections-table th:last-child,
+#selections-table td:last-child {
+    width: 28% !important;
+    text-align: left;
+    padding: 8px 4px;
+}
+
+/* Pagination styling */
+#selections-pagination {
+    margin-bottom: 50px;
+}
+
+#selections-pagination .tablenav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#selections-pagination .pagination-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#selections-pagination .pagination-links button {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+#selections-pagination .pagination-links button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#current-page-info {
+    padding: 4px 8px;
+    background: #8b5cf6;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#pagination-info {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Responsive design */
+@media screen and (max-width: 782px) {
+    .dashboard-controls {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 10px !important;
+    }
+    
+    .dashboard-controls input,
+    .dashboard-controls select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    #selections-summary {
+        margin-left: 0 !important;
+        text-align: center;
+        white-space: normal;
+    }
+    
+    #selections-table {
+        font-size: 12px;
+    }
+    
+    #selections-table th,
+    #selections-table td {
+        padding: 8px 4px;
+    }
+    
+    #selections-pagination .tablenav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    #selections-pagination .pagination-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Empty state styling */
+#selections-table tbody tr td[colspan="5"] {
+    font-style: italic;
+    color: #666;
+    background: #f9f9f9;
+}
+
+/* Error state styling */
+#selections-table tbody tr td[style*="color: #dc3232"] {
+    background: #fff2f2;
+    border-left: 4px solid #dc3232;
+}
+
+/* Hover effects */
+#selections-table tbody tr:hover {
+    background-color: #e8e8e8 !important;
+}
+
+/* Data Management Actions */
+#selections-actions {
+    background: #f9f9f9;
+    border: 1px solid #e1e5e9;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+#selections-actions .dashicons {
+    vertical-align: text-top;
+}
+
+#clear-all-selections:hover {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+/* Responsive design for actions section */
+@media screen and (max-width: 782px) {
+    #selections-actions > div {
+        flex-direction: column !important;
+        gap: 15px;
+        align-items: flex-start !important;
+    }
+    
+    #selections-actions p {
+        text-align: center;
+    }
+    
+    #selections-actions button {
+        align-self: center;
+    }
+}
+
+/* Loading spinner customization */
+.popular-selections-dashboard .spinner.is-active {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 3.5a6.5 6.5 0 1 0 6.5 6.5 1 1 0 0 1 2 0 8.5 8.5 0 1 1-8.5-8.5 1 1 0 0 1 0 2z' fill='%230073aa'/%3E%3C/svg%3E");
+    width: 20px;
+    height: 20px;
+}
+
+/* Hide Save Changes button when Popular Selections or Support tab is active */
+body.popular-tab-active .submit {
+    display: none !important;
+}
+
+/* Premium Upgrade Banner */
+.explainer-upgrade-banner {
+    background: linear-gradient(135deg, #0F172A 0%, #ec4899 100%);
+    border: 2px solid #ec4899;
+    border-radius: 12px;
+    margin: 20px 0 30px 0;
+    padding: 28px 32px;
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.explainer-upgrade-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ec4899, #ec4899, #ec4899);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+}
+
+.upgrade-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    gap: 24px;
+}
+
+.upgrade-banner-text {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+    gap: 16px;
+}
+
+.upgrade-banner-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #ec4899, #f472b6);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.5);
+}
+
+.upgrade-banner-icon .dashicons {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    color: #ffffff;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.upgrade-banner-message {
+    flex: 1;
+}
+
+.upgrade-banner-message h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.upgrade-banner-message p {
+    margin: 0;
+    font-size: 15px;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+.upgrade-banner-actions {
+    flex-shrink: 0;
+}
+
+.upgrade-banner-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(236, 72, 153, 0.3);
+}
+
+.feature-column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.feature-column li {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.feature-column li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ec4899;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.feature-column li:last-child {
+    margin-bottom: 0;
+}
+
+.upgrade-banner-button {
+    background: linear-gradient(135deg, #ec4899, #f472b6) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    padding: 14px 32px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.6) !important;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.upgrade-banner-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.upgrade-banner-button:hover::before {
+    left: 100%;
+}
+
+.upgrade-banner-button:hover,
+.upgrade-banner-button:focus {
+    background: linear-gradient(135deg, #f472b6, #ec4899) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 24px rgba(236, 72, 153, 0.7) !important;
+}
+
+.upgrade-banner-button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 12px rgba(236, 72, 153, 0.5) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .explainer-upgrade-banner {
+        padding: 20px;
+    }
+
+    .upgrade-banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .upgrade-banner-text {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .upgrade-banner-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .upgrade-banner-icon .dashicons {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .upgrade-banner-message h3 {
+        font-size: 18px;
+    }
+
+    .upgrade-banner-message p {
+        font-size: 14px;
+    }
+
+    .upgrade-banner-actions {
+        width: 100%;
+    }
+
+    .upgrade-banner-button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .upgrade-banner-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 20px;
+        padding-top: 16px;
+    }
+}
+
+/* Upgrade Tab Styling */
+.nav-tab-upgrade {
+    background: linear-gradient(135deg, #ec4899, #f472b6) !important;
+    color: white !important;
+    border-color: #ec4899 !important;
+    font-weight: 600 !important;
+}
+
+.nav-tab-upgrade:hover {
+    background: linear-gradient(135deg, #f472b6, #ec4899) !important;
+    color: white !important;
+}
+
+.explainer-upgrade-tab {
+    background: linear-gradient(135deg, #faf8ff 0%, #fdf9ff 100%);
+    border-radius: 12px;
+    padding: 0;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    background-image:
+        linear-gradient(135deg, #faf8ff 0%, #fdf9ff 100%),
+        linear-gradient(135deg, #0F172A, #ec4899, #0F172A);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-size: 100%, 200% 200%;
+    animation: gradientBorderShift 3s ease infinite;
+}
+
+@keyframes gradientBorderShift {
+    0%, 100% { background-position: 0% 0%, 0% 0%; }
+    50% { background-position: 0% 0%, 100% 100%; }
+}
+
+.upgrade-tab-hero {
+    text-align: center;
+    padding: 60px 40px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.upgrade-tab-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, #ec4899, #f472b6);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upgrade-tab-icon .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: white;
+    animation: rotateStar 4s linear infinite;
+}
+
+@keyframes rotateStar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Fade in on scroll animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pricing table section */
+.upgrade-pricing-section {
+    margin: 40px 0 60px 0;
+    padding: 0 40px;
+}
+
+.upgrade-pricing-section h2 {
+    color: #0F172A;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+
+.pricing-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-table thead th {
+    background: #f8fafc;
+    padding: 32px 24px;
+    border-bottom: 2px solid #e2e8f0;
+    position: relative;
+}
+
+.pricing-table thead th.feature-column {
+    text-align: left;
+    color: #0F172A;
+    font-size: 16px;
+    font-weight: 700;
+    width: 40%;
+}
+
+.pricing-table thead th.plan-column {
+    text-align: center;
+    width: 30%;
+    border-left: 1px solid #e2e8f0;
+}
+
+.pricing-table thead th.plan-premium {
+    background: linear-gradient(135deg, #0F172A 0%, #ec4899 100%);
+    border-left: 2px solid #ec4899;
+}
+
+.plan-premium .plan-header h3 {
+    color: white;
+}
+
+.plan-premium .plan-price .price {
+    color: white;
+}
+
+.plan-premium .plan-price .period {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.plan-badge {
+    position: absolute;
+    top: 8px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+}
+
+.plan-header h3 {
+    color: #0F172A;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+}
+
+.plan-price .price {
+    color: #0F172A;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.plan-price .period {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pricing-table tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.pricing-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.pricing-table tbody tr.cta-row {
+    border-top: 2px solid #f1f5f9;
+}
+
+.pricing-table tbody td {
+    padding: 20px 24px;
+}
+
+.pricing-table tbody td.feature-name {
+    color: #334155;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.pricing-table tbody td.feature-check {
+    text-align: center;
+    border-left: 1px solid #f1f5f9;
+}
+
+.pricing-table tbody td.feature-name {
+    color: #334155;
+}
+
+.pricing-table tbody tr:hover td.feature-name {
+    background: #f8fafc;
+}
+
+.pricing-table tbody tr:hover td.feature-check {
+    background: #fafafa;
+}
+
+.feature-check .dashicons {
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+}
+
+.feature-check .dashicons-yes {
+    color: #10b981;
+}
+
+.feature-check .dashicons-no {
+    color: #cbd5e1;
+}
+
+.cta-row td {
+    padding: 24px !important;
+}
+
+.pricing-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ec4899, #f472b6) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    padding: 14px 32px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4) !important;
+}
+
+.pricing-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 30px rgba(236, 72, 153, 0.6) !important;
+}
+
+.pricing-cta .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive pricing table */
+@media (max-width: 768px) {
+    .upgrade-pricing-section {
+        padding: 0 20px;
+    }
+
+    .pricing-table {
+        font-size: 14px;
+    }
+
+    .pricing-table thead th {
+        padding: 20px 12px;
+    }
+
+    .pricing-table tbody td {
+        padding: 16px 12px;
+    }
+
+    .plan-price .price {
+        font-size: 28px;
+    }
+
+    .plan-header h3 {
+        font-size: 18px;
+    }
+
+    .pricing-table thead th.feature-column {
+        width: 50%;
+    }
+
+    .pricing-table thead th.plan-column {
+        width: 25%;
+    }
+}
+
+.upgrade-tab-hero h2 {
+    color: #0F172A;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.upgrade-tab-hero p {
+    color: #334155;
+    font-size: 18px;
+    margin: 0 0 32px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.upgrade-tab-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ec4899, #f472b6) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    padding: 16px 40px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4) !important;
+}
+
+.upgrade-tab-cta:hover {
+    background: linear-gradient(135deg, #f472b6, #ec4899) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 24px rgba(236, 72, 153, 0.5) !important;
+    color: white !important;
+}
+
+.upgrade-tab-cta .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.upgrade-tab-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 40px;
+}
+
+.upgrade-feature-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.upgrade-feature-card:hover {
+    background: white;
+    border-color: #ec4899;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.15);
+}
+
+.feature-card-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #ec4899, #f472b6);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.feature-card-icon .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+.upgrade-feature-card h3 {
+    color: #0F172A;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.upgrade-feature-card p {
+    color: #334155;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.upgrade-tab-footer {
+    text-align: center;
+    padding: 60px 40px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.upgrade-tab-footer h3 {
+    color: #0F172A;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.upgrade-tab-footer p {
+    color: #334155;
+    font-size: 16px;
+    margin: 0 0 32px 0;
+}
+
+/* Responsive adjustments for upgrade tab */
+@media (max-width: 768px) {
+    .upgrade-tab-hero {
+        padding: 40px 24px;
+    }
+
+    .upgrade-tab-hero h2 {
+        font-size: 24px;
+    }
+
+    .upgrade-tab-hero p {
+        font-size: 16px;
+    }
+
+    .upgrade-tab-features {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+
+    .upgrade-feature-card {
+        padding: 24px;
+    }
+
+    .upgrade-tab-footer {
+        padding: 40px 24px;
+    }
+
+    .upgrade-tab-footer h3 {
+        font-size: 22px;
+    }
+}
+
+
+
+/* Vertically centre the Save Changes button text */
+.submit input[type="submit"] {
+    line-height: 17px !important;
+}
+
+/* Style the form-linked submit button specifically */
+#submit[form="wp-ai-explainer-admin-form"] {
+    margin-top: 30px !important;
+    line-height: 1.4 !important;
+}
+
+/* =============================================================================
+   Delete API Key Button Styling
+   ============================================================================= */
+
+.delete-api-key-btn {
+    margin-left: 10px !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    height: auto !important;
+    color: #d63638 !important;
+    border-color: #d63638 !important;
+    background: #fff !important;
+    text-decoration: none !important;
+    vertical-align: middle !important;
+}
+
+.delete-api-key-btn:hover {
+    color: #fff !important;
+    background: #d63638 !important;
+    border-color: #d63638 !important;
+}
+
+.delete-api-key-btn:focus {
+    color: #d63638 !important;
+    background: #fff !important;
+    border-color: #d63638 !important;
+    box-shadow: 0 0 0 1px #d63638 !important;
+}
+
+.delete-api-key-btn .dashicons {
+    font-size: 12px !important;
+    width: 12px !important;
+    height: 12px !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+    margin-right: 4px !important;
+    margin-top: -1px !important;
+}
+
+.delete-api-key-btn:disabled {
+    color: #a7aaad !important;
+    background: #f6f7f7 !important;
+    border-color: #c3c4c7 !important;
+    cursor: not-allowed !important;
+}
+
+.delete-api-key-btn:disabled:hover {
+    color: #a7aaad !important;
+    background: #f6f7f7 !important;
+    border-color: #c3c4c7 !important;
+}
+
+/* =============================================================================
+   Popular Selections Dashboard - Explanation Interface
+   ============================================================================= */
+
+/* Show explanation button styling */
+.show-explanation-btn {
+    background: none !important;
+    border: none !important;
+    padding: 4px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    color: #666 !important;
+    transition: color 0.2s ease, transform 0.1s ease !important;
+    height: auto !important;
+    min-height: auto !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: 3px !important;
+}
+
+.show-explanation-btn:hover {
+    color: #8b5cf6 !important;
+    background: rgba(0, 115, 170, 0.1) !important;
+    transform: scale(1.1) !important;
+}
+
+.show-explanation-btn:focus {
+    color: #8b5cf6 !important;
+    background: rgba(0, 115, 170, 0.15) !important;
+    box-shadow: 0 0 0 1px rgba(0, 115, 170, 0.3) !important;
+}
+
+.show-explanation-btn:active {
+    transform: scale(0.95) !important;
+}
+
+.show-explanation-btn .dashicons {
+    transition: transform 0.2s ease !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Edit explanation button styling */
+.edit-explanation-btn {
+    background: none !important;
+    border: none !important;
+    padding: 4px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    color: #666 !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.edit-explanation-btn:hover {
+    color: #8b5cf6 !important;
+    background: rgba(0, 115, 170, 0.1) !important;
+}
+
+.edit-explanation-btn:focus {
+    color: #8b5cf6 !important;
+    background: rgba(0, 115, 170, 0.15) !important;
+    box-shadow: 0 0 0 1px rgba(0, 115, 170, 0.3) !important;
+}
+
+.edit-explanation-btn .dashicons {
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Explanation row styling */
+
+.explanation-content {
+    border-left: 3px solid #8b5cf6;
+    background: linear-gradient(135deg, #f9f9f9 0%, #f5f5f5 100%);
+    width: 100% !important;
+    box-sizing: border-box;
+    display: block !important;
+    min-width: 100% !important;
+}
+
+/* Loading state */
+.explanation-loading {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-style: italic;
+}
+
+.explanation-loading .spinner {
+    margin-right: 8px;
+}
+
+/* Explanation display */
+.explanation-display {
+    width: 100% !important;
+    display: block !important;
+}
+
+.explanation-display h4 {
+    color: #8b5cf6;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.explanation-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    min-height: 40px;
+    width: 100% !important;
+    box-sizing: border-box;
+    display: block !important;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Edit mode */
+.explanation-edit h4 {
+    color: #8b5cf6;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.explanation-textarea {
+    resize: vertical;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    background: white;
+    transition: border-color 0.2s ease;
+}
+
+.explanation-textarea:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 1px #8b5cf6;
+    outline: none;
+}
+
+/* Action buttons in explanation */
+.explanation-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-explanation-btn,
+.save-explanation-btn,
+.cancel-edit-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    height: 32px;
+    min-height: 32px;
+    line-height: 1.4;
+    box-sizing: border-box;
+}
+
+.save-explanation-btn {
+    background: #00a32a;
+    border-color: #00a32a;
+    color: white;
+}
+
+.save-explanation-btn:hover {
+    background: #008a20;
+    border-color: #008a20;
+}
+
+.cancel-edit-btn {
+    background: #f6f7f7;
+    border-color: #ddd;
+    color: #50575e;
+}
+
+.cancel-edit-btn:hover {
+    background: #f0f0f1;
+    border-color: #999;
+}
+
+/* Error state */
+.explanation-error {
+    background: #fbeaea;
+    border: 1px solid #f087a1;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: #d63638;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* Delete button styling */
+.delete-selection-btn {
+    border-color: #d63638;
+    background: transparent;
+    transition: all 0.2s ease;
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 6px 12px !important;
+    line-height: 1.4 !important;
+    box-sizing: border-box !important;
+}
+
+.delete-selection-btn:hover {
+    background: #d63638;
+    color: white;
+    border-color: #d63638;
+}
+
+/* Improved action buttons layout */
+.actions div {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Smooth animations */
+.explanation-row {
+    transition: all 0.2s ease;
+    width: 100% !important;
+}
+
+.explanation-row td {
+    border-top: none !important;
+    width: 100% !important;
+}
+
+/* Mobile responsiveness for explanation interface */
+@media (max-width: 782px) {
+    .explanation-content {
+        padding: 10px;
+    }
+    
+    .explanation-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .explanation-actions .button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .actions div {
+        flex-direction: column;
+        gap: 3px;
+    }
+    
+    .actions div .button {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+/* =============================================================================
+   Job Queue Status Panel
+   ============================================================================= */
+
+.job-status-panel {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.job-status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.job-status-header h3 {
+    margin: 0;
+    color: #23282d;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.job-status-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.job-status-controls .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    height: 32px;
+    min-height: 32px;
+    line-height: 1.4;
+    box-sizing: border-box;
+}
+
+.job-status-controls .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Job loading states */
+.job-loading {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.job-loading .spinner {
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+.job-loading p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Job empty state */
+.job-empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+}
+
+.job-empty-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.job-empty-icon .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+}
+
+.job-empty-state h4 {
+    margin: 0 0 10px 0;
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.job-empty-state p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Job error state */
+.job-error-state {
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.job-error-state p {
+    margin: 0 0 10px 0;
+}
+
+/* Job list */
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual job items - Streamlined Design */
+.job-item {
+    margin-bottom: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #fff;
+    transition: all 0.15s ease;
+    overflow: hidden;
+}
+
+.job-item:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 1px 4px rgba(0, 115, 170, 0.1);
+}
+
+/* Job item header - Compact with inline status */
+.job-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.job-item-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.job-title {
+    margin: 0;
+    color: #23282d;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    word-break: break-word;
+    flex: 1;
+}
+
+.job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 13px;
+    color: #666;
+}
+
+.job-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.job-id {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Job status badges */
+.job-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.job-status-badge.job-status-pending {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.job-status-badge.job-status-processing {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #b8daff;
+}
+
+.job-status-badge.job-status-completed {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.job-status-badge.job-status-failed {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.job-status-badge.job-status-cancelled {
+    background: #e2e3e5;
+    color: #41464b;
+    border: 1px solid #d1d3d4;
+}
+
+/* Status icons */
+.job-status-icon::before {
+    font-family: dashicons;
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+.job-status-pending .job-status-icon::before {
+    content: "\f469"; /* clock */
+}
+
+.job-status-processing .job-status-icon::before {
+    content: "\f463"; /* update/spinning */
+    animation: spin 1s linear infinite;
+}
+
+.job-status-completed .job-status-icon::before {
+    content: "\f147"; /* yes-alt */
+}
+
+.job-status-failed .job-status-icon::before {
+    content: "\f335"; /* dismiss/warning */
+}
+
+.job-status-cancelled .job-status-icon::before {
+    content: "\f153"; /* minus */
+}
+
+/* Job item body */
+.job-item-body {
+    padding: 0 16px 12px 16px;
+}
+
+/* Progress bar for processing jobs */
+.job-progress {
+    margin-bottom: 10px;
+}
+
+.job-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.job-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8b5cf6, #00a0d2);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.job-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 30px 30px;
+    animation: move 2s linear infinite;
+}
+
+.job-progress-text {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Error display for failed jobs */
+.job-error {
+    background: #fbeaea;
+    border: 1px solid #f087a1;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.job-error .error-message {
+    margin: 0 0 10px 0;
+    color: #d63638;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.job-error .error-message .dashicons {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.job-error-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* Success display for completed jobs */
+.job-success {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-success-details {
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.job-success .success-message {
+    margin: 0;
+    color: #10b981;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.job-result-meta {
+    display: inline;
+    gap: 8px;
+    font-size: 12px;
+    color: #999;
+    margin-left: 6px;
+}
+
+.job-cost {
+    font-weight: 600;
+    color: #8b5cf6;
+}
+
+.job-success-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Pending job actions */
+.job-pending-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff8e1;
+    border: 1px solid #ffecb3;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.job-queue-position {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #f57c00;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.job-pending-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* Button styling within job items */
+.job-item .button-small {
+    padding: 3px 8px;
+    font-size: 12px;
+    height: 26px;
+    line-height: 1.4;
+    min-height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-sizing: border-box;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.job-item .button-small .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+.job-item .button-primary {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+    color: #fff;
+}
+
+.job-item .button-primary:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+.job-item .button-secondary {
+    background: #f0f0f1;
+    border-color: #c3c4c7;
+    color: #50575e;
+}
+
+.job-item .button-secondary:hover {
+    background: #f6f7f7;
+    border-color: #8c8f94;
+}
+
+.job-item .button-link-delete {
+    color: #b32d2e;
+    border-color: #b32d2e;
+    background: transparent;
+}
+
+.job-item .button-link-delete:hover {
+    background: #b32d2e;
+    color: #fff;
+}
+
+/* Hidden state utility */
+.hidden {
+    display: none !important;
+}
+
+/* Animation keyframes */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes move {
+    0% { background-position: 0 0; }
+    100% { background-position: 30px 30px; }
+}
+
+/* Responsive design for job status panel */
+@media (max-width: 782px) {
+    .job-status-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .job-status-controls {
+        justify-content: center;
+    }
+    
+    .job-item-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    .job-status-badge {
+        align-self: flex-start;
+    }
+    
+    .job-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .job-pending-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .job-pending-buttons {
+        justify-content: center;
+    }
+    
+    .job-success-actions,
+    .job-error-actions {
+        flex-direction: column;
+    }
+    
+    .job-success-actions .button,
+    .job-error-actions .button,
+    .job-pending-buttons .button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .job-result-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+/* =============================================================================
+   Cron Management Styles
+   ============================================================================= */
+
+/* Cron instructions styling */
+#cron-instructions {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+#cron-instructions h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+#cron-command {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    display: block;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+/* Run Job Button Styles */
+.run-job-btn {
+    background: #007cba !important;
+    border-color: #005a87 !important;
+    color: #fff !important;
+    margin-right: 8px;
+}
+
+.run-job-btn:hover {
+    background: #005a87 !important;
+    border-color: #005a87 !important;
+}
+
+.run-job-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+}
+
+.run-job-btn .dashicons {
+    font-size: 12px;
+    margin-right: 3px;
+    vertical-align: text-top;
+}
+
+/* Spinning animation for loading state */
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Job pending buttons layout */
+.job-pending-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.job-pending-buttons .button {
+    margin: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+/* Manual mode indicator */
+.manual-mode-indicator {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.manual-mode-indicator .dashicons {
+    margin-right: 5px;
+    color: #856404;
+}
+
+/* Enhanced button styling for job actions */
+.job-pending-actions .button-small {
+    font-size: 11px;
+    padding: 2px 6px;
+    line-height: 1.4;
+}
+
+.job-pending-actions .button-primary.button-small {
+    font-weight: 500;
+}
+
+/* Loading state enhancements */
+.run-job-btn.loading {
+    pointer-events: none;
+    background: #8b5cf6 !important;
+    border-color: #8b5cf6 !important;
+    opacity: 0.8;
+}
+
+.run-job-btn.loading .dashicons {
+    animation: spin 1s linear infinite;
+}
+
+/* Job progress enhancements */
+.job-progress {
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.job-progress-bar {
+    background: #f0f0f0;
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.job-progress-fill {
+    background: linear-gradient(90deg, #007cba, #00a0d2);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.job-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.job-progress-text {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+/* Job success/error message styles */
+.job-run-success,
+.job-run-error {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 4px solid;
+    font-size: 13px;
+    line-height: 1.4;
+    display: none;
+}
+
+.job-run-success {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.job-run-error {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.job-run-success .dashicons,
+.job-run-error .dashicons {
+    font-size: 16px;
+    vertical-align: text-top;
+    margin-right: 5px;
+}
+
+/* Success/Error message styling */
+.admin-message {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 4px;
+    border-left: 4px solid;
+}
+
+.admin-message.success {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.admin-message.error {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .job-pending-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .run-job-btn {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    #cron-command {
+        font-size: 11px;
+        padding: 8px;
+    }
+}
+
+/* =============================================================================
+   Support Tab Features Overview
+   ============================================================================= */
+
+.features-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.feature-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.feature-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.feature-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #50575e;
+}
+
+.advanced-feature {
+    margin-bottom: 30px;
+    border-left: 4px solid #2271b1;
+    padding-left: 20px;
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 0 6px 6px 0;
+}
+
+.advanced-feature h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #1d2327;
+}
+
+.advanced-feature p {
+    margin: 0 0 15px 0;
+    color: #50575e;
+}
+
+.advanced-feature ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.advanced-feature li {
+    margin-bottom: 8px;
+    color: #50575e;
+}
+
+.job-queue-info,
+.performance-tips {
+    display: grid;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .job-queue-info,
+    .performance-tips {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.help-issue {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.help-issue h4 {
+    margin: 0 0 15px 0;
+    font-size: 15px;
+    color: #1d2327;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.help-issue ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.help-issue li {
+    margin-bottom: 10px;
+    color: #50575e;
+    line-height: 1.5;
+}
+
+/* Support section spacing */
+.support-section {
+    margin-bottom: 30px;
+}
+
+.support-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #1d2327;
+    border-bottom: 2px solid #2271b1;
+    padding-bottom: 8px;
+}
+
+/* Job queue - created post display */
+.job-created-post {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.job-created-post .post-thumbnail {
+    flex-shrink: 0;
+}
+
+.job-created-post .post-thumbnail img {
+    display: block;
+    border: 1px solid #ddd;
+}
+
+.job-created-post .post-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.job-created-post .post-title {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2327;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.job-created-post .post-meta {
+    margin: 0;
+    font-size: 12px;
+    color: #646970;
+    font-style: italic;
+}
+
+/* =============================================================================
+   Real-Time Settings & Diagnostics
+   ============================================================================= */
+
+/* Real-time settings section */
+#realtime-settings {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#realtime-settings h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1d2327;
+    font-size: 18px;
+}
+
+#realtime-settings .description {
+    margin-bottom: 20px;
+    color: #646970;
+}
+
+/* Real-time status indicators */
+.realtime-status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.realtime-status-active {
+    background: #46b450;
+    box-shadow: 0 0 4px rgba(70, 180, 80, 0.5);
+}
+
+.realtime-status-inactive {
+    background: #dc3232;
+    box-shadow: 0 0 4px rgba(220, 50, 50, 0.5);
+}
+
+.realtime-status-fallback {
+    background: #ffb900;
+    box-shadow: 0 0 4px rgba(255, 185, 0, 0.5);
+}
+
+/* Diagnostics section */
+.realtime-diagnostics {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.realtime-diagnostics h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1d2327;
+}
+
+.diagnostic-controls {
+    margin: 15px 0;
+}
+
+.diagnostic-controls .button {
+    margin-right: 10px;
+}
+
+/* Test results display */
+.realtime-test-results {
+    background: #fff;
+    border-left: 4px solid #00a0d2;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.realtime-test-results h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #0073aa;
+}
+
+.realtime-test-results h5 {
+    margin: 15px 0 10px 0;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* Test summary */
+.test-summary ul {
+    margin: 0 0 15px 20px;
+    padding: 0;
+}
+
+.test-summary li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* Test details grid */
+.test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.test-item {
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+}
+
+.test-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #1d2327;
+}
+
+/* Status indicators in test results */
+.status-pass {
+    color: #46b450;
+    font-weight: 600;
+}
+
+.status-fail {
+    color: #dc3232;
+    font-weight: 600;
+}
+
+.status-warning {
+    color: #f56e28;
+    font-weight: 600;
+}
+
+.status-good {
+    color: #46b450;
+    font-weight: 600;
+}
+
+.error-detail {
+    color: #dc3232;
+    font-style: italic;
+}
+
+.transport-mode {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #0073aa;
+}
+
+/* Test recommendations */
+.test-recommendations {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.test-recommendations h5 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #856404;
+}
+
+.test-recommendations ul {
+    margin: 0 0 0 20px;
+    padding: 0;
+}
+
+.test-recommendations li {
+    margin-bottom: 5px;
+    color: #856404;
+}
+
+/* Test progress indicator */
+.realtime-test-progress {
+    background: #e7f3ff;
+    border: 1px solid #b8daff;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.realtime-test-progress p {
+    margin: 5px 0;
+    color: #0073aa;
+}
+
+/* Test error display */
+.realtime-test-error {
+    background: #ffeaea;
+    border-left: 4px solid #dc3232;
+    padding: 15px;
+    border-radius: 0 4px 4px 0;
+}
+
+.realtime-test-error h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #dc3232;
+}
+
+.realtime-test-error .error-message {
+    font-weight: 600;
+    color: #dc3232;
+    margin: 10px 0;
+}
+
+/* Current status display */
+.realtime-current-status {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f7f7f7;
+    border-left: 4px solid #007cba;
+    border-radius: 0 4px 4px 0;
+}
+
+.realtime-current-status h5 {
+    margin: 0 0 10px 0;
+    color: #1d2327;
+}
+
+.realtime-current-status p {
+    margin: 5px 0;
+    color: #646970;
+}
+
+/* Help documentation */
+.realtime-help {
+    margin-top: 15px;
+    padding: 10px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+}
+
+.realtime-help h5 {
+    margin: 0 0 10px 0;
+    color: #856404;
+}
+
+.realtime-help ul {
+    margin: 0 0 0 20px;
+    padding: 0;
+}
+
+.realtime-help li {
+    margin-bottom: 5px;
+    color: #856404;
+    line-height: 1.4;
+}
+
+/* Test metadata */
+.test-metadata {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #e1e1e1;
+    text-align: right;
+}
+
+.test-metadata small {
+    color: #646970;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .test-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .diagnostic-controls .button {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    #realtime-settings {
+        padding: 15px;
+    }
+}
+
+/* =============================================================================
+   Job Queue Table Error Messages
+   ============================================================================= */
+
+/* Actions cell styling */
+.job-actions-cell {
+    vertical-align: top;
+}
+
+.job-actions {
+    margin-bottom: 8px;
+}
+
+/* Inline error message styling */
+.job-error-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 300px;
+    word-wrap: break-word;
+}
+
+.job-error-message .error-icon {
+    flex-shrink: 0;
+    color: #dc2626;
+}
+
+.job-error-message .error-icon .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.job-error-message .error-text {
+    color: #7f1d1d;
+    flex: 1;
+}
+
+.job-error-message .error-text strong {
+    color: #991b1b;
+}
+
+/* Responsive adjustments for error messages */
+@media (max-width: 768px) {
+    .job-error-message {
+        max-width: 200px;
+        font-size: 11px;
+    }
+}
+
+/* Premium Benefits Section */
+.wpaie-premium-benefits {
+    background: #f8f9fa;
+    color: #0F172A;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px solid #e9ecef;
+}
+
+.wpaie-premium-benefits h2 {
+    color: #0F172A;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.benefit-card {
+    background: var(--plugin-bg-slate);
+    color: var(--plugin-tooltip-bg);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.benefit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card .dashicons {
+    font-size: 30px;
+    color: #10b981;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.benefit-card h4 {
+    color: var(--plugin-tooltip-bg);
+    margin: 10px 0;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.benefit-card p {
+    color: var(--plugin-accent);
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.pricing-cta {
+    text-align: center;
+}
+
+.pricing-guarantee {
+    color: #64748b;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.pricing-guarantee .dashicons {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.button-hero {
+    font-size: 18px !important;
+    padding: 12px 40px !important;
+    height: auto !important;
+    line-height: 1.5 !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    background: #ec4899 !important;
+    border-color: #ec4899 !important;
+}
+
+.button-hero:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+    background: #db2777 !important;
+    border-color: #db2777 !important;
+}
+
+.license-separator {
+    text-align: center;
+    margin: 30px 0 20px;
+    position: relative;
+}
+
+.license-separator span {
+    background: #f1f1f1;
+    padding: 0 15px;
+    position: relative;
+    color: #666;
+    font-size: 14px;
+}
+
+.license-separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #ddd;
+    z-index: 0;
+}
+
+/* License activation form container */
+.license-activation-container {
+    background: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.license-activation-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.license-activation-container > p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+#wpaie-license-form {
+    margin-bottom: 20px;
+}
+
+#wpaie-license-form input[type="text"] {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    min-width: 300px;
+}
+
+#wpaie-license-form button {
+    vertical-align: top;
+}
+
+#wpaie-activate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.wpaie-license-message {
+    margin-top: 15px;
+}
+
+.wpaie-license-message .notice {
+    margin: 0;
+    padding: 10px 15px;
+}
+
+.wpaie-purchase-option {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.wpaie-purchase-option p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.wpaie-purchase-option a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.wpaie-purchase-option a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wpaie-premium-benefits {
+        padding: 20px;
+    }
+
+    .license-activation-container {
+        padding: 20px;
+    }
+
+    #wpaie-license-form input[type="text"] {
+        min-width: 250px;
+        margin-right: 0;
+        margin-bottom: 15px;
+        display: block;
+        width: 100%;
+    }
+
+    #wpaie-license-form button {
+        width: 100%;
+    }
+}
+/* Advanced content options styling - remove borders when expanded - scoped to plugin pages */
+.explainer-admin-wrap table.form-table tr.advanced-content-options-toggle.expanded {
+    border-bottom: none !important;
+}
+
+.explainer-admin-wrap table.form-table tr.advanced-content-options-toggle.expanded th,
+.explainer-admin-wrap table.form-table tr.advanced-content-options-toggle.expanded td {
+    border-bottom: none !important;
+}
+
+.explainer-admin-wrap table.form-table tr.advanced-content-options-included {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.explainer-admin-wrap table.form-table tr.advanced-content-options-included th,
+.explainer-admin-wrap table.form-table tr.advanced-content-options-included td {
+    padding-top: 0 !important;
+    border-top: none !important;
+}
+
+.explainer-admin-wrap table.form-table tr.advanced-content-options-excluded {
+    border-bottom: none !important;
+}
+
+.explainer-admin-wrap table.form-table tr.advanced-content-options-excluded th,
+.explainer-admin-wrap table.form-table tr.advanced-content-options-excluded td {
+    border-bottom: none !important;
+}
+
+.explainer-admin-wrap table.form-table tr.advanced-content-options-auto-detect {
+    border-top: none !important;
+}
+
+.explainer-admin-wrap table.form-table tr.advanced-content-options-auto-detect th,
+.explainer-admin-wrap table.form-table tr.advanced-content-options-auto-detect td {
+    border-top: none !important;
+    padding-top: 0 !important;
+}
+
+/* =============================================================================
+   Account Page Styles
+   ============================================================================= */
+
+/* License Activation Container */
+.license-activation-container {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.license-activation-container h3 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.wpaie-license-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.wpaie-license-actions .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: auto;
+    line-height: normal;
+    padding: 7px 14px;
+}
+
+.wpaie-license-actions .button .dashicons {
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.wpaie-help-links {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.wpaie-help-links a {
+    text-decoration: none;
+}
+
+.wpaie-help-links a:hover {
+    text-decoration: underline;
+}
+
+/* Account Information Container */
+.wpaie-customer-account {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.wpaie-account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f1;
+}
+
+.wpaie-account-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.wpaie-account-status {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wpaie-account-status.status-active {
+    background: #d5f2d5;
+    color: #2d6d2d;
+}
+
+.wpaie-account-status.status-inactive {
+    background: #f7dede;
+    color: #8b2e2e;
+}
+
+/* Account Grid Layout */
+.wpaie-account-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.wpaie-account-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+.wpaie-account-section h4 {
+    margin: 0 0 15px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1d2327;
+}
+
+.wpaie-account-section h4 .dashicons {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #2271b1;
+}
+
+/* Account Info Rows */
+.wpaie-account-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.wpaie-account-info-row:last-child {
+    border-bottom: none;
+}
+
+.wpaie-account-info-label {
+    font-weight: 500;
+    color: #50575e;
+    font-size: 13px;
+}
+
+.wpaie-account-info-value {
+    font-weight: 400;
+    color: #1d2327;
+    font-size: 13px;
+    text-align: right;
+}
+
+/* Account Actions */
+.wpaie-account-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.wpaie-account-actions .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wpaie-account-actions .button .dashicons {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+}
+
+/* Usage Statistics Section */
+.wpaie-usage-stats {
+    background: linear-gradient(135deg, #f0f9ff 0%, #f9f9f9 100%);
+    border-color: #d0e7f7;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .wpaie-account-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wpaie-account-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .wpaie-license-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .wpaie-license-actions .button {
+        justify-content: center;
+    }
+    
+    .wpaie-account-info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .wpaie-account-info-value {
+        text-align: left;
+    }
+}
+
+/* Account Notice */
+.wpaie-account-notice {
+    margin-top: 20px;
+}
+
+.wpaie-account-notice .notice {
+    margin: 0;
+}

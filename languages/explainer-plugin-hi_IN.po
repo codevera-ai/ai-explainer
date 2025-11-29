@@ -1,0 +1,145 @@
+# Copyright (C) 2024 WP AI Explainer
+# This file is distributed under the same license as the WP AI Explainer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP AI Explainer 1.0.0\n"
+"Report-Msgid-Bugs-To: info@wpaiexplainer.com\n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-12-19 10:00:00+00:00\n"
+"Last-Translator: WP AI Explainer <info@wpaiexplainer.com>\n"
+"Language-Team: Hindi (India)\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Manual\n"
+
+#: includes/class-activator.php:25
+msgid "This plugin requires WordPress 5.0 or higher."
+msgstr "इस प्लगइन के लिए WordPress 5.0 या उससे अधिक की आवश्यकता है।"
+
+#: includes/class-activator.php:31
+msgid "This plugin requires PHP 7.4 or higher."
+msgstr "इस प्लगइन के लिए PHP 7.4 या उससे अधिक की आवश्यकता है।"
+
+#: includes/class-admin.php:50
+msgid "WP AI Explainer Settings"
+msgstr "AI व्याख्याकर्ता सेटिंग्स"
+
+#: includes/class-admin.php:51
+msgid "Explainer Settings"
+msgstr "व्याख्याकर्ता सेटिंग्स"
+
+#: includes/class-admin.php:65
+msgid "Basic Settings"
+msgstr "बुनियादी सेटिंग्स"
+
+#: includes/class-admin.php:70
+msgid "Advanced Settings"
+msgstr "उन्नत सेटिंग्स"
+
+#: includes/class-admin.php:80
+msgid "Enable Plugin"
+msgstr "प्लगइन सक्षम करें"
+
+#: includes/class-admin.php:81
+msgid "Enable or disable the AI Explainer plugin"
+msgstr "AI व्याख्याकर्ता प्लगइन को सक्षम या अक्षम करें"
+
+#: includes/class-admin.php:90
+msgid "OpenAI API Key"
+msgstr "OpenAI API कुंजी"
+
+#: includes/class-admin.php:91
+msgid "Enter your OpenAI API key to enable AI explanations"
+msgstr "AI व्याख्याओं को सक्षम करने के लिए अपनी OpenAI API कुंजी दर्ज करें"
+
+#: includes/class-admin.php:100
+msgid "AI Model"
+msgstr "AI मॉडल"
+
+#: includes/class-admin.php:101
+msgid "Select the AI model to use for generating explanations"
+msgstr "व्याख्याएं उत्पन्न करने के लिए उपयोग करने वाला AI मॉडल चुनें"
+
+#: includes/class-admin.php:110
+msgid "Cache Duration (hours)"
+msgstr "कैश अवधि (घंटे)"
+
+#: includes/class-admin.php:111
+msgid "How long to cache explanations (1-168 hours)"
+msgstr "व्याख्याओं को कितने समय तक कैश करना है (1-168 घंटे)"
+
+#: includes/class-admin.php:120
+msgid "Rate Limit (requests per minute)"
+msgstr "दर सीमा (प्रति मिनट अनुरोध)"
+
+#: includes/class-admin.php:121
+msgid "Maximum requests per minute per user"
+msgstr "प्रति उपयोगकर्ता प्रति मिनट अधिकतम अनुरोध"
+
+#: includes/class-api-proxy.php:45
+msgid "Invalid nonce"
+msgstr "अमान्य nonce"
+
+#: includes/class-api-proxy.php:51
+msgid "Invalid request"
+msgstr "अमान्य अनुरोध"
+
+#: includes/class-api-proxy.php:58
+msgid "Text selection is required"
+msgstr "टेक्स्ट चयन आवश्यक है"
+
+#: includes/class-api-proxy.php:64
+msgid "Text selection is too short"
+msgstr "टेक्स्ट चयन बहुत छोटा है"
+
+#: includes/class-api-proxy.php:70
+msgid "Text selection is too long"
+msgstr "टेक्स्ट चयन बहुत लंबा है"
+
+#: includes/class-api-proxy.php:76
+msgid "Rate limit exceeded. Please wait before making another request."
+msgstr "दर सीमा पार हो गई। कृपया दूसरा अनुरोध करने से पहले प्रतीक्षा करें।"
+
+#: includes/class-api-proxy.php:82
+msgid "API key not configured. Please check your settings."
+msgstr "API कुंजी कॉन्फ़िगर नहीं की गई। कृपया अपनी सेटिंग्स जांचें।"
+
+#: includes/class-api-proxy.php:120
+msgid "API request failed. Please try again."
+msgstr "API अनुरोध विफल। कृपया फिर से कोशिश करें।"
+
+#: includes/class-api-proxy.php:126
+msgid "Explanation temporarily unavailable. Please try again later."
+msgstr "व्याख्या अस्थायी रूप से अनुपलब्ध। कृपया बाद में फिर से कोशिश करें।"
+
+#: assets/js/explainer.js:50
+msgid "Loading explanation..."
+msgstr "व्याख्या लोड हो रही है..."
+
+#: assets/js/explainer.js:75
+msgid "Close explanation"
+msgstr "व्याख्या बंद करें"
+
+#: assets/js/explainer.js:100
+msgid "Toggle AI Explainer"
+msgstr "AI व्याख्याकर्ता टॉगल करें"
+
+#: assets/js/explainer.js:150
+msgid "Text selection is too short (minimum 3 characters)"
+msgstr "टेक्स्ट चयन बहुत छोटा है (न्यूनतम 3 अक्षर)"
+
+#: assets/js/explainer.js:155
+msgid "Text selection is too long (maximum 200 characters)"
+msgstr "टेक्स्ट चयन बहुत लंबा है (अधिकतम 200 अक्षर)"
+
+#: assets/js/tooltip.js:25
+msgid "Explanation"
+msgstr "व्याख्या"
+
+#: assets/js/tooltip.js:45
+msgid "Error loading explanation"
+msgstr "व्याख्या लोड करने में त्रुटि"
+

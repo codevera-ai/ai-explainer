@@ -1,0 +1,224 @@
+# Copyright (C) 2024 Codevera
+# This file is distributed under the same license as the WP AI Explainer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP AI Explainer 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/billymedia/WP-AI-Explainer/issues\n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Codevera <info@wpaiexplainer.com>\n"
+"Language-Team: Codevera <info@wpaiexplainer.com>\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: WordPress\n"
+
+#: includes/class-activator.php:25
+msgid "This plugin requires WordPress 5.0 or higher."
+msgstr ""
+
+#: includes/class-activator.php:31
+msgid "This plugin requires PHP 7.4 or higher."
+msgstr ""
+
+#: includes/class-admin.php:50
+msgid "AI Explainer Settings"
+msgstr ""
+
+#: includes/class-admin.php:51
+msgid "Explainer Settings"
+msgstr ""
+
+#: includes/class-admin.php:65
+msgid "Basic Settings"
+msgstr ""
+
+#: includes/class-admin.php:70
+msgid "Advanced Settings"
+msgstr ""
+
+#: includes/class-admin.php:80
+msgid "Enable Plugin"
+msgstr ""
+
+#: includes/class-admin.php:81
+msgid "Enable or disable the AI Explainer plugin"
+msgstr ""
+
+#: includes/class-admin.php:90
+msgid "OpenAI API Key"
+msgstr ""
+
+#: includes/class-admin.php:91
+msgid "Enter your OpenAI API key to enable AI explanations"
+msgstr ""
+
+#: includes/class-admin.php:100
+msgid "AI Model"
+msgstr ""
+
+#: includes/class-admin.php:101
+msgid "Select the AI model to use for generating explanations"
+msgstr ""
+
+#: includes/class-admin.php:110
+msgid "Cache Duration (hours)"
+msgstr ""
+
+#: includes/class-admin.php:111
+msgid "How long to cache explanations (1-168 hours)"
+msgstr ""
+
+#: includes/class-admin.php:120
+msgid "Rate Limit (requests per minute)"
+msgstr ""
+
+#: includes/class-admin.php:121
+msgid "Maximum requests per minute per user"
+msgstr ""
+
+#: includes/class-api-proxy.php:45
+msgid "Invalid nonce"
+msgstr ""
+
+#: includes/class-api-proxy.php:51
+msgid "Invalid request"
+msgstr ""
+
+#: includes/class-api-proxy.php:58
+msgid "Text selection is required"
+msgstr ""
+
+#: includes/class-api-proxy.php:64
+msgid "Text selection is too short"
+msgstr ""
+
+#: includes/class-api-proxy.php:70
+msgid "Text selection is too long"
+msgstr ""
+
+#: includes/class-api-proxy.php:76
+msgid "Rate limit exceeded. Please wait before making another request."
+msgstr ""
+
+#: includes/class-api-proxy.php:82
+msgid "API key not configured. Please check your settings."
+msgstr ""
+
+#: includes/class-api-proxy.php:120
+msgid "API request failed. Please try again."
+msgstr ""
+
+#: includes/class-api-proxy.php:126
+msgid "Explanation temporarily unavailable. Please try again later."
+msgstr ""
+
+#: assets/js/explainer.js:50
+msgid "Loading explanation..."
+msgstr ""
+
+#: assets/js/explainer.js:75
+msgid "Close explanation"
+msgstr ""
+
+#: assets/js/explainer.js:100
+msgid "Toggle AI Explainer"
+msgstr ""
+
+#: assets/js/explainer.js:150
+msgid "Text selection is too short (minimum 3 characters)"
+msgstr ""
+
+#: assets/js/explainer.js:155
+msgid "Text selection is too long (maximum 200 characters)"
+msgstr ""
+
+#: assets/js/tooltip.js:25
+msgid "Explanation"
+msgstr ""
+
+#: assets/js/tooltip.js:45
+msgid "Error loading explanation"
+msgstr ""
+
+#: templates/admin-settings.php:25
+msgid "WP AI Explainer Settings"
+msgstr ""
+
+#: templates/admin-settings.php:35
+msgid "Basic"
+msgstr ""
+
+#: templates/admin-settings.php:40
+msgid "Advanced"
+msgstr ""
+
+#: templates/admin-settings.php:50
+msgid "Plugin Status"
+msgstr ""
+
+#: templates/admin-settings.php:55
+msgid "API Configuration"
+msgstr ""
+
+#: templates/admin-settings.php:60
+msgid "Performance Settings"
+msgstr ""
+
+#: templates/admin-settings.php:70
+msgid "Save Changes"
+msgstr ""
+
+#: templates/admin-settings.php:75
+msgid "Test API Key"
+msgstr ""
+
+#: templates/admin-settings.php:80
+msgid "Clear Cache"
+msgstr ""
+
+#: templates/admin-settings.php:85
+msgid "Export Settings"
+msgstr ""
+
+#: templates/admin-settings.php:90
+msgid "Import Settings"
+msgstr ""
+
+#: includes/class-admin.php:108
+msgid "Language"
+msgstr ""
+
+#: includes/class-admin.php:226
+msgid "English (United States)"
+msgstr ""
+
+#: includes/class-admin.php:227
+msgid "English (United Kingdom)"
+msgstr ""
+
+#: includes/class-admin.php:228
+msgid "Spanish (Spain)"
+msgstr ""
+
+#: includes/class-admin.php:229
+msgid "German (Germany)"
+msgstr ""
+
+#: includes/class-admin.php:230
+msgid "French (France)"
+msgstr ""
+
+#: includes/class-admin.php:231
+msgid "Hindi (India)"
+msgstr ""
+
+#: includes/class-admin.php:232
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: includes/class-admin.php:243
+msgid "Select the language for the plugin interface and AI explanations."
+msgstr ""

@@ -1,0 +1,744 @@
+/**
+ * Admin Settings Styles
+ * Extracted from admin-settings.php template
+ */
+
+/* Copy Button Fix - prevent combining translateY transforms */
+.btn-secondary.copy-btn:hover,
+.copy-btn:hover {
+    transform: scale(1.02) !important;
+}
+
+/* Copy buttons that are vertically centered need to maintain their position */
+.copy-btn[style*="translateY(-50%)"]:hover {
+    transform: translateY(-50%) scale(1.02) !important;
+}
+
+/* Provider Info Card Styling */
+.provider-info-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.provider-info-card h4 {
+    margin-top: 0;
+    color: #23282d;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.pricing-note, .setup-instructions {
+    margin: 15px 0;
+}
+
+.pricing-note h5, .setup-instructions h5 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.pricing-note p, .setup-instructions ol {
+    margin: 10px 0;
+    padding-left: 0;
+}
+
+.setup-instructions ol {
+    padding-left: 20px;
+}
+
+.setup-instructions li {
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.setup-instructions a {
+    color: #8b5cf6;
+    text-decoration: none;
+}
+
+.setup-instructions a:hover {
+    text-decoration: underline;
+}
+
+/* API Key Status Container Styling */
+.api-key-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.api-key-status .dashicons {
+    flex-shrink: 0;
+}
+
+.api-key-status strong {
+    flex-shrink: 0;
+}
+
+.api-key-status code {
+    flex-shrink: 0;
+    font-family: monospace;
+    background: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.api-key-status .delete-api-key-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+/* API Key Input and Button Container Styling */
+.api-key-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.api-key-input-container .regular-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.api-key-input-container .button {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Blog Creator Button Styling */
+.create-blog-post-btn {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.create-blog-post-btn:disabled {
+    background: #f6f7f7 !important;
+    border-color: #ddd !important;
+    color: #a0a5aa !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+}
+
+.create-blog-post-btn:disabled:hover {
+    background: #f6f7f7 !important;
+    border-color: #ddd !important;
+    color: #a0a5aa !important;
+}
+
+/* API Key Notice Styling */
+.nav-tab-link {
+    color: #8b5cf6;
+    text-decoration: none;
+}
+
+.nav-tab-link:hover {
+    color: #005177;
+    text-decoration: underline;
+}
+
+/* ==================== POST SCAN STYLES ==================== */
+
+/* Post Search Section */
+.post-search-section {
+    margin-bottom: 30px;
+}
+
+.post-search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.post-search-form #post-search-input {
+    flex: 1;
+    max-width: 400px;
+}
+
+.post-search-results {
+    margin-top: 20px;
+}
+
+.post-search-results-table {
+    margin: 15px 0;
+}
+
+.post-search-results-table .wp-list-table {
+    border: 1px solid #c3c4c7;
+}
+
+/* Processed Posts Section */
+.processed-posts-section {
+    margin-top: 40px;
+}
+
+#processed-posts-container {
+    margin-top: 20px;
+}
+
+.processed-posts-section .spinner {
+    float: none;
+    margin: 10px 0;
+}
+
+/* Status Badges */
+.post-status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.status-not-scanned {
+    background-color: #f0f0f1;
+    color: #646970;
+}
+
+.status-queued {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status-processing {
+    background-color: #cce5ff;
+    color: #0066cc;
+    border: 1px solid #99d6ff;
+}
+
+.status-processed {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-outdated {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Table Styling */
+.wp-list-table .column-title {
+    width: 40%;
+}
+
+.wp-list-table .column-actions {
+    width: 120px;
+    text-align: center;
+}
+
+.wp-list-table .row-actions {
+    margin-top: 5px;
+}
+
+/* Sort Links */
+.sort-link {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.sort-link:hover {
+    color: #0073aa;
+}
+
+.sorting-indicators {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.sorting-indicator {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 2px 0;
+}
+
+.sorting-indicator.asc {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid #ccc;
+}
+
+.sorting-indicator.desc {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #ccc;
+}
+
+.sort-link.sorted-asc .sorting-indicator.asc {
+    border-bottom-color: #0073aa;
+}
+
+.sort-link.sorted-desc .sorting-indicator.desc {
+    border-top-color: #0073aa;
+}
+
+/* Modal Styles */
+.explainer-modal {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.explainer-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.explainer-modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.explainer-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.explainer-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explainer-modal-close:hover {
+    color: #000;
+}
+
+.explainer-modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.explainer-modal-body .spinner {
+    float: none;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .post-search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .post-search-form #post-search-input {
+        max-width: none;
+        margin-bottom: 10px;
+    }
+    
+    .explainer-modal-content {
+        width: 95%;
+        margin: 10px auto;
+        max-height: 90vh;
+    }
+    
+    .wp-list-table .column-title {
+        width: auto;
+    }
+    
+    .wp-list-table .column-actions {
+        width: auto;
+    }
+    
+    .post-status-badge {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .explainer-modal-content {
+        width: 98%;
+        margin: 5px auto;
+    }
+    
+    .explainer-modal-body {
+        padding: 15px;
+    }
+    
+    .wp-list-table .manage-column {
+        padding: 8px 4px;
+    }
+}
+
+/* ==================== TAILWIND BUTTON STYLES ==================== */
+
+/* CSS Custom Properties */
+:root {
+    --primary-purple: #8b5cf6;
+    --primary-pink: #ec4899;
+    --slate-900: #0f172a;
+    --slate-800: #1e293b;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-400: #94a3b8;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+}
+
+/* Base button styles */
+.btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    height: 36px; /* Standardised height for all buttons */
+    min-height: 36px; /* Ensure minimum height is maintained */
+    box-sizing: border-box; /* Include padding and border in height calculation */
+}
+
+.btn-base:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.btn-base:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 2px 4px rgba(139, 92, 246, 0.15);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+    box-shadow: 0 4px 8px rgba(139, 92, 246, 0.25);
+    transform: scale(1.02);
+    color: white;
+}
+
+.btn-primary:active {
+    background: linear-gradient(135deg, #6d28d9 0%, #be185d 100%);
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(139, 92, 246, 0.15);
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+    border-color: var(--slate-300);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--slate-200);
+    color: var(--slate-800);
+    border-color: var(--slate-400);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+.btn-secondary:active {
+    background-color: var(--slate-300);
+    color: var(--slate-900);
+    transform: translateY(0);
+}
+
+.btn-secondary:focus {
+    box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.3);
+}
+
+/* Destructive Button */
+.btn-destructive {
+    background-color: #dc2626;
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 1px 2px rgba(220, 38, 38, 0.15);
+}
+
+.btn-destructive:hover:not(:disabled) {
+    background-color: #b91c1c;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.25);
+    transform: scale(1.02);
+    color: white;
+}
+
+.btn-destructive:active {
+    background-color: #991b1b;
+    transform: translateY(0);
+}
+
+.btn-destructive:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+}
+
+/* Outline Button */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-purple);
+    color: var(--primary-purple);
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(139, 92, 246, 0.25);
+    transform: scale(1.02);
+}
+
+.btn-outline:active {
+    background: linear-gradient(135deg, #6d28d9 0%, #be185d 100%);
+    color: white;
+    transform: translateY(0);
+}
+
+.btn-outline:focus {
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+}
+
+/* Ghost Button */
+.btn-ghost {
+    background: transparent;
+    border-color: transparent;
+    color: var(--slate-700);
+}
+
+.btn-ghost:hover:not(:disabled) {
+    background-color: var(--slate-100);
+    color: var(--slate-800);
+    transform: scale(1.02);
+}
+
+.btn-ghost:active {
+    background-color: var(--slate-200);
+    color: var(--slate-900);
+    transform: translateY(0);
+}
+
+.btn-ghost:focus {
+    box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.3);
+}
+
+/* Size Variants - All maintain same height but adjust padding and font size */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+    height: 36px; /* Same height as base */
+    min-height: 36px;
+}
+
+.btn-lg {
+    padding: 8px 24px; /* Adjusted padding to maintain height */
+    font-size: 16px;
+    height: 36px; /* Same height as base */
+    min-height: 36px;
+}
+
+.btn-xl {
+    padding: 8px 32px; /* Adjusted padding to maintain height */
+    font-size: 18px;
+    height: 36px; /* Same height as base */
+    min-height: 36px;
+}
+
+/* Width Variants */
+.btn-full {
+    width: 100%;
+}
+
+/* Icon adjustments */
+.btn-with-icon {
+    gap: 8px;
+}
+
+.btn-loading {
+    gap: 8px;
+}
+
+.btn-loading svg {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Ensure WordPress default buttons in admin also maintain consistent height */
+.wrap .button:not(.wp-color-result),
+.wrap .button-primary:not(.wp-color-result),
+.wrap .button-secondary:not(.wp-color-result) {
+    height: 36px !important;
+    min-height: 36px !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Ensure form submit buttons also maintain consistent height */
+input[type="submit"].button,
+input[type="button"].button {
+    height: 36px !important;
+    min-height: 36px !important;
+    box-sizing: border-box !important;
+}
+
+/* Preserve WordPress colour picker button styling */
+.wp-color-result {
+    height: auto !important;
+    min-height: auto !important;
+    display: block !important;
+    box-sizing: content-box !important;
+}
+
+/* Disabled Submit Button Styling */
+.button-disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    background: #ddd !important;
+    border-color: #ccc !important;
+    color: #666 !important;
+}
+
+.button-disabled:hover,
+.button-disabled:focus,
+.button-disabled:active {
+    background: #ddd !important;
+    border-color: #ccc !important;
+    color: #666 !important;
+    box-shadow: none !important;
+}
+
+
+/* Upgrade Button */
+.upgrade-button {
+    margin-left: 10px !important;
+    background: #f39c12 !important;
+    border-color: #f39c12 !important;
+    color: white !important;
+    font-weight: 600;
+}
+
+.upgrade-button:hover,
+.upgrade-button:focus {
+    background: #e67e22 !important;
+    border-color: #e67e22 !important;
+    color: white !important;
+}
+
+/* Pro field styling */
+.premium-feature-wrapper {
+    position: relative;
+}
+
+.premium-field-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.premium-field-disabled input,
+.premium-field-disabled select {
+    background: #f5f5f5 !important;
+    cursor: not-allowed;
+}
+
+.premium-indicator {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    color: #f39c12;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.premium-indicator .dashicons {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.premium-upgrade-link {
+    color: #f39c12 !important;
+    text-decoration: none !important;
+    margin-left: 8px;
+}
+
+.premium-upgrade-link:hover {
+    color: #d68910 !important;
+}
+
+/* Money-back guarantee styling */
+.money-back-guarantee {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #0073aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.money-back-guarantee .dashicons {
+    font-size: 16px;
+}

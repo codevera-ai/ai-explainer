@@ -1,0 +1,3610 @@
+/**
+ * WP AI Explainer - Styles
+ * Performance optimized with CSS containment and efficient selectors
+ * Defensive CSS to prevent conflicts with other plugins
+ */
+
+/* =============================================================================
+   Tailwind Button Components
+   ============================================================================= */
+
+/* Base button styles */
+.btn-base {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    border-radius: 0.375rem !important;
+    border: 1px solid transparent !important;
+    transition: all 0.2s ease-in-out !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.btn-base:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5) !important;
+}
+
+.btn-base:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-purple, #8b5cf6) 0%, var(--primary-pink, #ec4899) 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid transparent !important;
+    box-shadow: 0 2px 4px rgba(139, 92, 246, 0.15) !important;
+    text-align: center !important;
+    justify-content: center !important;
+    height: 32px !important;
+    padding: 0 16px !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    line-height: 32px !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%) !important;
+    box-shadow: 0 4px 8px rgba(139, 92, 246, 0.25) !important;
+    transform: scale(1.02) !important;
+}
+
+.btn-primary:active {
+    background: linear-gradient(135deg, #6d28d9 0%, #be185d 100%) !important;
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(139, 92, 246, 0.15) !important;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border: 1px solid #cbd5e1 !important;
+    height: 32px !important;
+    padding: 0 16px !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    line-height: 32px !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #e2e8f0 !important;
+    color: #1e293b !important;
+    border-color: #94a3b8 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transform: scale(1.02) !important;
+}
+
+.btn-secondary:active {
+    background-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    transform: translateY(0) !important;
+}
+
+/* Destructive Button */
+.btn-destructive {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+    border: 1px solid transparent !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.btn-destructive:hover:not(:disabled) {
+    background-color: #b91c1c !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transform: scale(1.02) !important;
+}
+
+.btn-destructive:active {
+    background-color: #991b1b !important;
+    transform: translateY(0) !important;
+}
+
+/* Outline Button */
+.btn-outline {
+    background-color: transparent !important;
+    border: 2px solid var(--primary-purple, #8b5cf6) !important;
+    color: var(--primary-purple, #8b5cf6) !important;
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--primary-purple, #8b5cf6) 0%, var(--primary-pink, #ec4899) 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transform: scale(1.02) !important;
+}
+
+.btn-outline:active {
+    background: linear-gradient(135deg, #6d28d9 0%, #be185d 100%) !important;
+    color: #ffffff !important;
+    transform: translateY(0) !important;
+}
+
+/* Ghost Button */
+.btn-ghost {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    color: #334155 !important;
+}
+
+.btn-ghost:hover:not(:disabled) {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+    transform: scale(1.02) !important;
+}
+
+.btn-ghost:active {
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
+    transform: translateY(0) !important;
+}
+
+/* Link Button */
+.btn-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease-in-out !important;
+    text-decoration: none !important;
+    color: var(--primary-purple, #8b5cf6) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+}
+
+.btn-link:hover:not(:disabled) {
+    color: var(--primary-pink, #ec4899) !important;
+    text-decoration: underline !important;
+}
+
+/* Icon Button */
+.btn-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    border-radius: 0.375rem !important;
+    border: 1px solid #cbd5e1 !important;
+    transition: all 0.2s ease-in-out !important;
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    cursor: pointer !important;
+}
+
+.btn-icon:hover:not(:disabled) {
+    background-color: #e2e8f0 !important;
+    color: #1e293b !important;
+    border-color: #94a3b8 !important;
+    transform: scale(1.02) !important;
+}
+
+.btn-icon:active {
+    background-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    transform: translateY(0) !important;
+}
+
+/* Button With Icon */
+.btn-with-icon {
+    gap: 0.5rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1 !important;
+}
+
+.btn-with-icon > * {
+    display: inline-flex !important;
+    align-items: center !important;
+    vertical-align: middle !important;
+}
+
+/* Loading Button */
+.btn-loading {
+    gap: 0.5rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.btn-loading svg {
+    animation: spin 1s linear infinite !important;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Size Variants */
+.btn-sm {
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.75rem !important;
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+}
+
+.btn-xl {
+    padding: 1rem 2rem !important;
+    font-size: 1.125rem !important;
+}
+
+/* Width Variants */
+.btn-full {
+    width: 100% !important;
+}
+
+/* Icon Size Adjustments for Different Button Sizes */
+.btn-sm .btn-icon-size {
+    width: 0.75rem !important;
+    height: 0.75rem !important;
+    vertical-align: middle !important;
+}
+
+.btn-lg .btn-icon-size {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    vertical-align: middle !important;
+}
+
+.btn-xl .btn-icon-size {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    vertical-align: middle !important;
+}
+
+/* Default icon size for regular buttons */
+.btn-icon-size {
+    width: 1rem !important;
+    height: 1rem !important;
+    vertical-align: middle !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Dashicons specific alignment fixes */
+.btn-base .dashicons,
+.btn-base .dashicons-before:before {
+    vertical-align: middle !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    font-size: inherit !important;
+}
+
+/* =============================================================================
+   Plugin-specific CSS Reset for Defensive Styling
+   Consolidated reset patterns using CSS custom properties
+   ============================================================================= */
+
+/* Shared reset styles using CSS custom properties for consistency */
+.explainer-toggle,
+.explainer-tooltip,
+.explainer-selection-highlight,
+.explainer-toggle span,
+.explainer-toggle button,
+.explainer-tooltip span,
+.explainer-tooltip div,
+.explainer-tooltip button,
+.explainer-selection-highlight span {
+    /* Apply standardized reset values */
+    margin: var(--explainer-reset-margin) !important;
+    padding: var(--explainer-reset-padding) !important;
+    border: var(--explainer-reset-border) !important;
+    background: var(--explainer-reset-background) !important;
+    text-decoration: var(--explainer-reset-text-decoration) !important;
+    box-sizing: var(--explainer-reset-box-sizing) !important;
+    
+    /* Preserve inheritance for typography */
+    font: inherit !important;
+    color: inherit !important;
+}
+
+/* Restore essential display properties that 'all: unset' removes */
+.explainer-toggle {
+    display: inline-flex !important;
+}
+
+.explainer-tooltip {
+    display: block !important;
+}
+
+.explainer-tooltip-header {
+    display: flex !important;
+}
+
+.explainer-tooltip-content,
+.explainer-tooltip-footer,
+.explainer-disclaimer,
+.explainer-provider {
+    display: block !important;
+}
+
+.explainer-tooltip-close {
+    display: flex !important;
+}
+
+.explainer-selection-highlight {
+    display: inline !important;
+}
+
+/* =============================================================================
+   CSS Custom Properties & Configuration
+   Centralized variables for consistent theming and easy customization
+   ============================================================================= */
+
+:root {
+    /* Core brand colors - now using CSS variables from brand-colors.php */
+    --explainer-primary-color: var(--plugin-primary, #8b5cf6);
+    --explainer-primary-hover: #7c3aed;
+    --explainer-secondary-color: var(--plugin-secondary, #ec4899);
+    --explainer-success-color: var(--plugin-success, #10b981);
+    --explainer-error-color: var(--plugin-error, #dc3232);
+    --explainer-text-color: #333333;
+    
+    /* Slate color system */
+    --explainer-slate-900: #0f172a;
+    --explainer-slate-800: #1e293b;
+    --explainer-slate-700: #334155;
+    --explainer-slate-600: #475569;
+    --explainer-slate-500: #64748b;
+    --explainer-slate-400: #94a3b8;
+    --explainer-slate-300: #cbd5e1;
+    --explainer-slate-200: #e2e8f0;
+    --explainer-slate-100: #f1f5f9;
+    
+    /* Button colors - dynamically updated by JavaScript */
+    --explainer-button-enabled: var(--plugin-button-enabled, #8b5cf6);
+    --explainer-button-disabled: var(--plugin-button-disabled, #94a3b8);
+    --explainer-button-text: #ffffff;
+    
+    /* Slider colors - dynamically updated by JavaScript */
+    --explainer-slider-track-color: var(--plugin-slider-track-color, rgba(255, 255, 255, 1.0));
+    --explainer-slider-thumb-color: var(--plugin-slider-thumb-color, #8b5cf6);
+    
+    /* Layout & spacing */
+    --explainer-border-radius: 6px;
+    --explainer-spacing-xs: 4px;
+    --explainer-spacing-sm: 8px;
+    --explainer-spacing-md: 12px;
+    --explainer-spacing-lg: 16px;
+    --explainer-spacing-xl: 20px;
+    
+    /* Typography */
+    --explainer-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --explainer-font-size-xs: 10px;
+    --explainer-font-size-sm: 11px;
+    --explainer-font-size-md: 13px;
+    --explainer-font-size-base: 14px;
+    --explainer-font-size-lg: 16px;
+    --explainer-line-height-tight: 1.3;
+    --explainer-line-height-base: 1.4;
+    --explainer-line-height-loose: 1.5;
+    
+    /* Effects & animations - Updated with purple/pink theme */
+    --explainer-box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+    --explainer-box-shadow-subtle: 0 2px 8px rgba(139, 92, 246, 0.15);
+    --explainer-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --explainer-transition-fast: all 0.2s ease;
+    --explainer-animation-duration: 0.2s;
+    
+    /* Z-index layers */
+    --explainer-z-index-tooltip: 1000001;
+    --explainer-z-index-toggle: 999998;
+    
+    /* Component-specific resets (consolidated) */
+    --explainer-reset-margin: 0;
+    --explainer-reset-padding: 0;
+    --explainer-reset-border: none;
+    --explainer-reset-background: none;
+    --explainer-reset-text-decoration: none;
+    --explainer-reset-box-sizing: border-box;
+}
+
+/* =============================================================================
+   Toggle Button - Modern Button Design with Icon
+   ============================================================================= */
+
+/* Highly specific selector to prevent other plugins from overriding */
+body .explainer-toggle,
+html body .explainer-toggle,
+div .explainer-toggle,
+.explainer-toggle {
+    /* Positioning - now relative within container */
+    position: relative !important;
+    z-index: 1 !important;
+    
+    /* Button styling */
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 12px 20px !important;
+    border: none !important;
+    border-radius: 25px !important;
+    
+    /* Typography */
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: 0.5px !important;
+    
+    /* Colors - disabled state by default */
+    background-color: var(--explainer-button-disabled) !important;
+    color: var(--explainer-button-text) !important;
+    
+    /* Effects */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: var(--explainer-transition) !important;
+    cursor: pointer !important;
+    
+    /* Performance optimizations */
+    contain: layout style !important;
+    will-change: transform, background-color, box-shadow !important;
+    
+    /* Accessibility enhancements */
+    outline: none !important;
+    user-select: none !important;
+    
+    /* Touch optimization */
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+    
+    /* Remove default button styles */
+    margin: 0 !important;
+    
+    /* Ensure text and icon are properly aligned */
+    line-height: 1 !important;
+    
+    /* Additional defensive styles to prevent interference */
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    text-decoration: none !important;
+    text-align: left !important;
+    vertical-align: baseline !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Icon styling - Enhanced with stronger specificity and defensive styles */
+body .explainer-toggle .explainer-icon,
+html body .explainer-toggle .explainer-icon,
+div .explainer-toggle .explainer-icon,
+.explainer-toggle .explainer-icon,
+body .explainer-toggle svg.explainer-icon,
+html body .explainer-toggle svg.explainer-icon,
+div .explainer-toggle svg.explainer-icon,
+.explainer-toggle svg.explainer-icon {
+    /* Size and positioning */
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    
+    /* SVG-specific properties */
+    fill: currentColor !important;
+    stroke: none !important;
+    stroke-width: 0 !important;
+    
+    /* Layout properties */
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+    
+    /* Reset all inherited properties */
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    
+    /* Prevent theme interference */
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    
+    /* Ensure visibility */
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    
+    /* Positioning */
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: auto !important;
+    
+    /* Typography resets */
+    font-size: 16px !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1 !important;
+    
+    /* Color and appearance */
+    color: inherit !important;
+    outline: none !important;
+    cursor: inherit !important;
+}
+
+/* SVG path elements - ensure they inherit fill from parent SVG */
+body .explainer-toggle .explainer-icon path,
+html body .explainer-toggle .explainer-icon path,
+div .explainer-toggle .explainer-icon path,
+.explainer-toggle .explainer-icon path,
+body .explainer-toggle svg.explainer-icon path,
+html body .explainer-toggle svg.explainer-icon path,
+div .explainer-toggle svg.explainer-icon path,
+.explainer-toggle svg.explainer-icon path {
+    fill: inherit !important;
+    stroke: none !important;
+    stroke-width: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* SVG elements - comprehensive reset for all SVG child elements */
+body .explainer-toggle .explainer-icon *,
+html body .explainer-toggle .explainer-icon *,
+div .explainer-toggle .explainer-icon *,
+.explainer-toggle .explainer-icon *,
+body .explainer-toggle svg.explainer-icon *,
+html body .explainer-toggle svg.explainer-icon *,
+div .explainer-toggle svg.explainer-icon *,
+.explainer-toggle svg.explainer-icon * {
+    fill: inherit !important;
+    stroke: inherit !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
+}
+
+/* Button text */
+body .explainer-toggle .explainer-text,
+html body .explainer-toggle .explainer-text,
+div .explainer-toggle .explainer-text,
+.explainer-toggle .explainer-text {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+    display: inline !important;
+}
+
+/* Hover state */
+body .explainer-toggle:hover,
+html body .explainer-toggle:hover,
+div .explainer-toggle:hover,
+.explainer-toggle:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Active state */
+body .explainer-toggle:active,
+html body .explainer-toggle:active,
+div .explainer-toggle:active,
+.explainer-toggle:active {
+    transform: scale(1.02) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Focus state for accessibility */
+body .explainer-toggle:focus,
+html body .explainer-toggle:focus,
+div .explainer-toggle:focus,
+.explainer-toggle:focus {
+    outline: 2px solid var(--explainer-secondary-color) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.3) !important;
+}
+
+body .explainer-toggle:focus-visible,
+html body .explainer-toggle:focus-visible,
+div .explainer-toggle:focus-visible,
+.explainer-toggle:focus-visible {
+    outline: 2px solid var(--explainer-secondary-color) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.3) !important;
+}
+
+/* Enabled state */
+body .explainer-toggle.enabled,
+html body .explainer-toggle.enabled,
+div .explainer-toggle.enabled,
+.explainer-toggle.enabled {
+    background-color: var(--explainer-button-enabled) !important;
+}
+
+body .explainer-toggle.enabled:hover,
+html body .explainer-toggle.enabled:hover,
+div .explainer-toggle.enabled:hover,
+.explainer-toggle.enabled:hover {
+    filter: brightness(1.1) !important;
+}
+
+/* Disabled state (when plugin functionality is disabled) */
+body .explainer-toggle:disabled,
+html body .explainer-toggle:disabled,
+div .explainer-toggle:disabled,
+.explainer-toggle:disabled {
+    background-color: var(--explainer-button-disabled) !important;
+    cursor: not-allowed !important;
+    opacity: 0.7 !important;
+}
+
+body .explainer-toggle:disabled:hover,
+html body .explainer-toggle:disabled:hover,
+div .explainer-toggle:disabled:hover,
+.explainer-toggle:disabled:hover {
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body .explainer-toggle,
+    html body .explainer-toggle,
+    div .explainer-toggle,
+    .explainer-toggle {
+        padding: 12px 18px !important;
+        font-size: 14px !important;
+        /* Enhanced mobile touch target */
+        min-height: 44px !important;
+        min-width: 44px !important;
+        /* Better mobile shadows */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    body .explainer-toggle .explainer-icon,
+    html body .explainer-toggle .explainer-icon,
+    div .explainer-toggle .explainer-icon,
+    .explainer-toggle .explainer-icon,
+    body .explainer-toggle svg.explainer-icon,
+    html body .explainer-toggle svg.explainer-icon,
+    div .explainer-toggle svg.explainer-icon,
+    .explainer-toggle svg.explainer-icon {
+        width: 14px !important;
+        height: 14px !important;
+        min-width: 14px !important;
+        min-height: 14px !important;
+        max-width: 14px !important;
+        max-height: 14px !important;
+    }
+    
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .explainer-toggle {
+        border: 2px solid currentColor;
+    }
+    
+    .explainer-toggle:focus {
+        outline: 3px solid var(--explainer-secondary-color);
+        outline-offset: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .explainer-toggle {
+        transition: background-color 0.2s ease;
+        will-change: background-color;
+    }
+    
+    .explainer-toggle:hover {
+        transform: none;
+    }
+    
+    .explainer-toggle:active {
+        transform: none;
+    }
+}
+
+/* =============================================================================
+   Anti-Conflict Rules for Popular Themes and Plugins
+   ============================================================================= */
+
+/* Ensure SVG elements maintain their native behavior */
+body .explainer-toggle svg,
+body .explainer-toggle svg *,
+html body .explainer-toggle svg,
+html body .explainer-toggle svg * {
+    /* Preserve SVG rendering - don't use 'all: revert' as it conflicts */
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    
+    /* Ensure proper SVG display */
+    display: inline !important;
+    fill: currentColor !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: inherit !important;
+    height: inherit !important;
+}
+
+/* Override popular theme frameworks that might hide SVGs */
+.explainer-toggle svg[class*="icon"],
+.explainer-toggle svg[class*="svg"],
+.explainer-toggle .explainer-icon,
+body .explainer-toggle svg[class*="icon"],
+body .explainer-toggle svg[class*="svg"],
+body .explainer-toggle .explainer-icon {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Handle WordPress admin bar and other common z-index conflicts */
+#wpadminbar ~ * .explainer-toggle,
+.wp-toolbar ~ * .explainer-toggle {
+    z-index: 99998 !important;
+}
+
+/* =============================================================================
+   Help Icon - Question Mark for Tutorial Access
+   ============================================================================= */
+
+/* Toggle container - wrapper for toggle button and help icon */
+.explainer-toggle-container {
+    position: fixed !important;
+    z-index: var(--explainer-z-index-toggle) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* Position the container based on admin setting */
+.explainer-toggle-container.bottom-right {
+    bottom: 20px !important;
+    right: 20px !important;
+    flex-direction: row-reverse !important;
+}
+
+.explainer-toggle-container.bottom-left {
+    bottom: 20px !important;
+    left: 20px !important;
+    flex-direction: row !important;
+}
+
+.explainer-toggle-container.top-right {
+    top: 20px !important;
+    right: 20px !important;
+    flex-direction: row-reverse !important;
+}
+
+.explainer-toggle-container.top-left {
+    top: 20px !important;
+    left: 20px !important;
+    flex-direction: row !important;
+}
+
+/* Help icon base styles - now relative positioned within container */
+.explainer-help-icon {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background: rgba(55, 65, 81, 0.9) !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    backdrop-filter: blur(8px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    opacity: 0.7 !important;
+    flex-shrink: 0 !important;
+}
+
+.explainer-help-icon:hover {
+    opacity: 1 !important;
+    background: rgba(55, 65, 81, 1) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.explainer-help-icon:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.5) !important;
+}
+
+.explainer-help-icon .explainer-help-svg {
+    color: #ffffff !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .explainer-toggle-container {
+        gap: 8px !important;
+    }
+    
+    .explainer-toggle-container.bottom-right {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+    
+    .explainer-toggle-container.bottom-left {
+        bottom: 15px !important;
+        left: 15px !important;
+    }
+    
+    .explainer-toggle-container.top-right {
+        top: 15px !important;
+        right: 15px !important;
+    }
+    
+    .explainer-toggle-container.top-left {
+        top: 15px !important;
+        left: 15px !important;
+    }
+    
+    .explainer-help-icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    .explainer-help-icon .explainer-help-svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+}
+
+/* High specificity overrides for conflicting themes */
+html .explainer-toggle-container,
+body .explainer-toggle-container {
+    display: flex !important;
+    position: fixed !important;
+    z-index: 999999 !important;
+}
+
+html .explainer-help-icon,
+body .explainer-help-icon {
+    display: flex !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* =============================================================================
+   Text Selection Highlighting
+   ============================================================================= */
+
+body .explainer-selection-highlight,
+html body .explainer-selection-highlight,
+div .explainer-selection-highlight,
+.explainer-selection-highlight {
+    background-color: rgba(255, 255, 0, 0.3) !important;
+    border-radius: 2px !important;
+    transition: background-color 0.2s ease !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    color: inherit !important;
+    font-size: inherit !important;
+    text-decoration: none !important;
+    display: inline !important;
+}
+
+body .explainer-selection-highlight.processing,
+html body .explainer-selection-highlight.processing,
+div .explainer-selection-highlight.processing,
+.explainer-selection-highlight.processing {
+    background-color: rgba(139, 92, 246, 0.3) !important;
+}
+
+/* =============================================================================
+   Tooltip Base Styles
+   ============================================================================= */
+
+/* Highly specific selectors for tooltip to prevent other plugins from overriding */
+body .explainer-tooltip,
+html body .explainer-tooltip,
+div .explainer-tooltip,
+.explainer-tooltip {
+    position: absolute !important;
+    z-index: var(--explainer-z-index-tooltip) !important;
+    
+    /* Box styling - uses admin color settings */
+    background: var(--explainer-tooltip-bg-color, var(--plugin-tooltip-bg, var(--explainer-slate-800))) !important;
+    color: var(--explainer-tooltip-text-color, var(--plugin-tooltip-text, #ffffff)) !important;
+    border-radius: var(--explainer-border-radius) !important;
+    padding: 12px 16px !important;
+    max-width: 300px !important;
+    min-width: 200px !important;
+    
+    /* Typography - use site's paragraph font */
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    
+    /* Effects */
+    box-shadow: var(--explainer-box-shadow) !important;
+    opacity: 0 !important;
+    transform: translateY(10px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+    
+    /* Pointer events */
+    pointer-events: auto !important;
+    
+    /* Touch-friendly */
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+    
+    /* Better mobile interaction */
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: text !important;
+    -khtml-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+    
+    /* Accessibility */
+    role: tooltip !important;
+    
+    /* Additional defensive styles */
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    border: none !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    vertical-align: baseline !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    visibility: hidden !important;
+}
+
+body .explainer-tooltip.visible,
+html body .explainer-tooltip.visible,
+div .explainer-tooltip.visible,
+.explainer-tooltip.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+}
+
+body .explainer-tooltip.hidden,
+html body .explainer-tooltip.hidden,
+div .explainer-tooltip.hidden,
+.explainer-tooltip.hidden {
+    opacity: 0 !important;
+    transform: translateY(10px) !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+
+/* Tooltip header */
+body .explainer-tooltip-header,
+html body .explainer-tooltip-header,
+div .explainer-tooltip-header,
+.explainer-tooltip-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+body .explainer-tooltip-title,
+html body .explainer-tooltip-title,
+div .explainer-tooltip-title,
+.explainer-tooltip-title {
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    opacity: 0.9 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    /* 2-line truncation with ellipsis */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.2 !important;
+    max-height: 2.4em !important; /* 2 lines * 1.2 line-height */
+}
+
+/* When showing selected text instead of "Explanation", preserve original case */
+body .explainer-tooltip-title.selected-text,
+html body .explainer-tooltip-title.selected-text,
+div .explainer-tooltip-title.selected-text,
+.explainer-tooltip-title.selected-text {
+    text-transform: none !important;
+    font-size: 14px !important; /* Slightly larger for readability */
+    font-weight: 500 !important; /* Slightly less bold */
+}
+
+body .explainer-tooltip-close,
+html body .explainer-tooltip-close,
+div .explainer-tooltip-close,
+.explainer-tooltip-close {
+    background: none !important;
+    border: none !important;
+    color: var(--explainer-tooltip-text-color, #ffffff) !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+body .explainer-tooltip-close:hover,
+html body .explainer-tooltip-close:hover,
+div .explainer-tooltip-close:hover,
+.explainer-tooltip-close:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Tooltip content */
+body .explainer-tooltip-content,
+html body .explainer-tooltip-content,
+div .explainer-tooltip-content,
+.explainer-tooltip-content {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: inherit !important;
+    background: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* Tooltip footer */
+body .explainer-tooltip-footer,
+html body .explainer-tooltip-footer,
+div .explainer-tooltip-footer,
+.explainer-tooltip-footer {
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-top: 8px !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    opacity: 0.7 !important;
+    background: none !important;
+    color: inherit !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+}
+
+body .explainer-disclaimer,
+html body .explainer-disclaimer,
+div .explainer-disclaimer,
+.explainer-disclaimer,
+body .explainer-provider,
+html body .explainer-provider,
+div .explainer-provider,
+.explainer-provider {
+    margin: 2px 0 !important;
+    padding: 0 !important;
+    font-style: italic !important;
+    color: var(--explainer-tooltip-footer-color, rgba(255, 255, 255, 0.8)) !important;
+    background: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* Reading Level Slider */
+body .explainer-reading-level-slider,
+html body .explainer-reading-level-slider,
+div .explainer-reading-level-slider,
+.explainer-reading-level-slider {
+    margin: 12px 0 17px 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    contain: layout style !important;
+}
+
+body .explainer-slider-label,
+html body .explainer-slider-label,
+div .explainer-slider-label,
+.explainer-slider-label {
+    margin: 0 0 2px 0 !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: var(--explainer-tooltip-footer-color, rgba(255, 255, 255, 0.9)) !important;
+    background: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    cursor: default !important;
+}
+
+body .explainer-current-level,
+html body .explainer-current-level,
+div .explainer-current-level,
+.explainer-current-level {
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--explainer-tooltip-text-color, #ffffff) !important;
+    background: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+body .explainer-slider-wrapper,
+html body .explainer-slider-wrapper,
+div .explainer-slider-wrapper,
+.explainer-slider-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    position: relative !important;
+}
+
+/* Slider input */
+body .explainer-slider,
+html body .explainer-slider,
+div .explainer-slider,
+.explainer-slider {
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 6px !important;
+    background: var(--explainer-slider-track-color, rgba(255, 255, 255, 1.0)) !important;
+    border: none !important;
+    border-radius: 3px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    display: block !important;
+    position: relative !important; /* Ensure proper positioning context */
+}
+
+/* Webkit slider track */
+body .explainer-slider::-webkit-slider-runnable-track,
+html body .explainer-slider::-webkit-slider-runnable-track,
+div .explainer-slider::-webkit-slider-runnable-track,
+.explainer-slider::-webkit-slider-runnable-track {
+    width: 100% !important;
+    height: 6px !important;
+    background: var(--explainer-slider-track-color, rgba(255, 255, 255, 1.0)) !important;
+    border: none !important;
+    border-radius: 3px !important;
+    cursor: pointer !important;
+}
+
+/* Webkit slider thumb */
+body .explainer-slider::-webkit-slider-thumb,
+html body .explainer-slider::-webkit-slider-thumb,
+div .explainer-slider::-webkit-slider-thumb,
+.explainer-slider::-webkit-slider-thumb {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 16px !important;
+    height: 16px !important;
+    background: var(--explainer-slider-thumb-color, #8b5cf6) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.2s ease !important;
+    margin-top: -5px !important; /* Centers 16px thumb on 6px track */
+}
+
+body .explainer-slider::-webkit-slider-thumb:hover,
+html body .explainer-slider::-webkit-slider-thumb:hover,
+div .explainer-slider::-webkit-slider-thumb:hover,
+.explainer-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Firefox slider track */
+body .explainer-slider::-moz-range-track,
+html body .explainer-slider::-moz-range-track,
+div .explainer-slider::-moz-range-track,
+.explainer-slider::-moz-range-track {
+    width: 100% !important;
+    height: 6px !important;
+    background: var(--explainer-slider-track-color, rgba(255, 255, 255, 1.0)) !important;
+    border: none !important;
+    border-radius: 3px !important;
+    cursor: pointer !important;
+}
+
+/* Firefox slider thumb */
+body .explainer-slider::-moz-range-thumb,
+html body .explainer-slider::-moz-range-thumb,
+div .explainer-slider::-moz-range-thumb,
+.explainer-slider::-moz-range-thumb {
+    width: 16px !important;
+    height: 16px !important;
+    background: var(--explainer-slider-thumb-color, #8b5cf6) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.2s ease !important;
+    transform: translateY(0px) !important; /* Ensure proper centering */
+}
+
+body .explainer-slider::-moz-range-thumb:hover,
+html body .explainer-slider::-moz-range-thumb:hover,
+div .explainer-slider::-moz-range-thumb:hover,
+.explainer-slider::-moz-range-thumb:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Level labels */
+body .explainer-slider-levels,
+html body .explainer-slider-levels,
+div .explainer-slider-levels,
+.explainer-slider-levels {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 24px !important; /* Ensure space for labels */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative !important;
+}
+
+body .explainer-level-label,
+html body .explainer-level-label,
+div .explainer-level-label,
+.explainer-level-label {
+    margin: 0 !important;
+    padding: 2px 4px !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    color: var(--explainer-slider-track-color, rgba(255, 255, 255, 1.0)) !important;
+    background: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+    border-radius: 2px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    flex: none !important; /* Don't grow/shrink */
+    white-space: nowrap !important;
+}
+
+/* Left-aligned label */
+body .explainer-level-label.label-left,
+html body .explainer-level-label.label-left,
+div .explainer-level-label.label-left,
+.explainer-level-label.label-left {
+    text-align: left !important;
+    align-self: flex-start !important;
+    color: var(--explainer-slider-track-color, rgba(255, 255, 255, 1.0)) !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 8px !important;
+    transform: translateX(0) !important;
+}
+
+/* Right-aligned label */
+body .explainer-level-label.label-right,
+html body .explainer-level-label.label-right,
+div .explainer-level-label.label-right,
+.explainer-level-label.label-right {
+    text-align: right !important;
+    align-self: flex-end !important;
+    color: var(--explainer-slider-track-color, rgba(255, 255, 255, 1.0)) !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 8px !important;
+    transform: translateX(0) !important;
+}
+
+
+/* Removed hover effect for level labels */
+
+/* Loading state for slider */
+body .explainer-tooltip.loading .explainer-reading-level-slider,
+html body .explainer-tooltip.loading .explainer-reading-level-slider,
+div .explainer-tooltip.loading .explainer-reading-level-slider,
+.explainer-tooltip.loading .explainer-reading-level-slider {
+    opacity: 0.6 !important;
+    pointer-events: none !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+    body .explainer-level-label,
+    html body .explainer-level-label,
+    div .explainer-level-label,
+    .explainer-level-label {
+        font-size: 9px !important;
+        padding: 1px 2px !important;
+    }
+    
+    body .explainer-slider,
+    html body .explainer-slider,
+    div .explainer-slider,
+    .explainer-slider {
+        height: 8px !important;
+    }
+    
+    body .explainer-slider::-webkit-slider-runnable-track,
+    html body .explainer-slider::-webkit-slider-runnable-track,
+    div .explainer-slider::-webkit-slider-runnable-track,
+    .explainer-slider::-webkit-slider-runnable-track {
+        height: 8px !important;
+    }
+    
+    body .explainer-slider::-moz-range-track,
+    html body .explainer-slider::-moz-range-track,
+    div .explainer-slider::-moz-range-track,
+    .explainer-slider::-moz-range-track {
+        height: 8px !important;
+    }
+    
+    body .explainer-slider::-webkit-slider-thumb,
+    html body .explainer-slider::-webkit-slider-thumb,
+    div .explainer-slider::-webkit-slider-thumb,
+    .explainer-slider::-webkit-slider-thumb {
+        width: 20px !important;
+        height: 20px !important;
+        margin-top: -6px !important; /* Centers 20px thumb on 8px track */
+    }
+    
+    body .explainer-slider::-moz-range-thumb,
+    html body .explainer-slider::-moz-range-thumb,
+    div .explainer-slider::-moz-range-thumb,
+    .explainer-slider::-moz-range-thumb {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+body .explainer-provider,
+html body .explainer-provider,
+div .explainer-provider,
+.explainer-provider {
+    font-size: 10px !important;
+}
+
+/* Loading state */
+body .explainer-tooltip.loading .explainer-tooltip-content,
+html body .explainer-tooltip.loading .explainer-tooltip-content,
+div .explainer-tooltip.loading .explainer-tooltip-content,
+.explainer-tooltip.loading .explainer-tooltip-content {
+    opacity: 0.7 !important;
+}
+
+body .explainer-tooltip.loading::after,
+html body .explainer-tooltip.loading::after,
+div .explainer-tooltip.loading::after,
+.explainer-tooltip.loading::after {
+    content: '' !important;
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 8px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-top: 2px solid white !important;
+    border-radius: 50% !important;
+    animation: spin 1s linear infinite !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error state */
+body .explainer-tooltip.error,
+html body .explainer-tooltip.error,
+div .explainer-tooltip.error,
+.explainer-tooltip.error {
+    background: var(--explainer-error-color) !important;
+}
+
+body .explainer-tooltip.error .explainer-tooltip-content,
+html body .explainer-tooltip.error .explainer-tooltip-content,
+div .explainer-tooltip.error .explainer-tooltip-content,
+.explainer-tooltip.error .explainer-tooltip-content {
+    color: white !important;
+}
+
+body .explainer-tooltip.error .explainer-tooltip-title,
+html body .explainer-tooltip.error .explainer-tooltip-title,
+div .explainer-tooltip.error .explainer-tooltip-title,
+.explainer-tooltip.error .explainer-tooltip-title {
+    color: white !important;
+}
+
+body .explainer-tooltip.error .explainer-tooltip-close,
+html body .explainer-tooltip.error .explainer-tooltip-close,
+div .explainer-tooltip.error .explainer-tooltip-close,
+.explainer-tooltip.error .explainer-tooltip-close {
+    color: white !important;
+}
+
+body .explainer-tooltip.error .explainer-tooltip-header,
+html body .explainer-tooltip.error .explainer-tooltip-header,
+div .explainer-tooltip.error .explainer-tooltip-header,
+.explainer-tooltip.error .explainer-tooltip-header {
+    border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Success state */
+body .explainer-tooltip.success,
+html body .explainer-tooltip.success,
+div .explainer-tooltip.success,
+.explainer-tooltip.success {
+    background: var(--explainer-success-color) !important;
+}
+
+/* Tooltip arrow - uses admin color settings */
+body .explainer-tooltip::before,
+html body .explainer-tooltip::before,
+div .explainer-tooltip::before,
+.explainer-tooltip::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -8px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 8px solid transparent !important;
+    border-right: 8px solid transparent !important;
+    border-bottom: 8px solid var(--explainer-tooltip-bg-color, var(--explainer-slate-800)) !important;
+    border-top: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    display: block !important;
+}
+
+body .explainer-tooltip.error::before,
+html body .explainer-tooltip.error::before,
+div .explainer-tooltip.error::before,
+.explainer-tooltip.error::before {
+    border-bottom-color: var(--explainer-error-color) !important;
+}
+
+body .explainer-tooltip.success::before,
+html body .explainer-tooltip.success::before,
+div .explainer-tooltip.success::before,
+.explainer-tooltip.success::before {
+    border-bottom-color: var(--explainer-success-color) !important;
+}
+
+/* Position tooltip below selection */
+body .explainer-tooltip.below::before,
+html body .explainer-tooltip.below::before,
+div .explainer-tooltip.below::before,
+.explainer-tooltip.below::before {
+    top: -8px !important;
+    bottom: auto !important;
+    border-top: none !important;
+    border-bottom: 8px solid var(--explainer-tooltip-bg-color, var(--explainer-slate-800)) !important;
+}
+
+body .explainer-tooltip.below.error::before,
+html body .explainer-tooltip.below.error::before,
+div .explainer-tooltip.below.error::before,
+.explainer-tooltip.below.error::before {
+    border-bottom-color: var(--explainer-error-color) !important;
+}
+
+body .explainer-tooltip.below.success::before,
+html body .explainer-tooltip.below.success::before,
+div .explainer-tooltip.below.success::before,
+.explainer-tooltip.below.success::before {
+    border-bottom-color: var(--explainer-success-color) !important;
+}
+
+/* Position tooltip above selection */
+body .explainer-tooltip.above,
+html body .explainer-tooltip.above,
+div .explainer-tooltip.above,
+.explainer-tooltip.above {
+    transform: translateY(-10px) !important;
+}
+
+body .explainer-tooltip.above.visible,
+html body .explainer-tooltip.above.visible,
+div .explainer-tooltip.above.visible,
+.explainer-tooltip.above.visible {
+    transform: translateY(0) !important;
+}
+
+body .explainer-tooltip.above::before,
+html body .explainer-tooltip.above::before,
+div .explainer-tooltip.above::before,
+.explainer-tooltip.above::before {
+    top: auto !important;
+    bottom: -8px !important;
+    border-bottom: none !important;
+    border-top: 8px solid var(--explainer-tooltip-bg-color, var(--explainer-slate-800)) !important;
+}
+
+body .explainer-tooltip.above.error::before,
+html body .explainer-tooltip.above.error::before,
+div .explainer-tooltip.above.error::before,
+.explainer-tooltip.above.error::before {
+    border-top-color: var(--explainer-error-color) !important;
+    border-bottom: none !important;
+}
+
+body .explainer-tooltip.above.success::before,
+html body .explainer-tooltip.above.success::before,
+div .explainer-tooltip.above.success::before,
+.explainer-tooltip.above.success::before {
+    border-top-color: var(--explainer-success-color) !important;
+    border-bottom: none !important;
+}
+
+/* Mobile tooltip adjustments */
+@media (max-width: 768px) {
+    .explainer-tooltip {
+        max-width: calc(100vw - 30px) !important;
+        font-size: 14px !important;
+        padding: 12px 16px !important;
+        /* Keep natural scrolling behavior on mobile */
+        position: absolute !important;
+        /* Allow tooltips to flow with page content */
+        left: auto !important;
+        right: auto !important;
+        width: auto !important;
+    }
+    
+    .explainer-tooltip-title {
+        font-size: 13px !important;
+    }
+    
+    .explainer-tooltip-content {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Mobile-specific tooltip close button */
+    .explainer-tooltip-close {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 20px !important;
+    }
+}
+
+/* Enhanced mobile touch interactions */
+@media (hover: none) and (pointer: coarse) {
+    /* This targets touch devices specifically */
+    .explainer-toggle {
+        /* Remove hover effects on touch devices */
+        transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    
+    .explainer-toggle:hover {
+        /* Reset hover on touch devices */
+        transform: none !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Better touch feedback */
+    .explainer-toggle:active {
+        background-color: var(--explainer-button-enabled) !important;
+        filter: brightness(0.9) !important;
+        transform: scale(0.95) !important;
+    }
+}
+
+/* =============================================================================
+   Accessibility Enhancements
+   ============================================================================= */
+
+/* Screen reader only text */
+.explainer-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Focus indicators for keyboard navigation */
+.explainer-selection-highlight:focus {
+    outline: 2px solid var(--explainer-secondary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode adjustments */
+@media (forced-colors: active) {
+    .explainer-toggle {
+        border: 2px solid ButtonText;
+        background: ButtonFace;
+        color: ButtonText;
+    }
+    
+    .explainer-toggle:hover,
+    .explainer-toggle:focus {
+        background: Highlight;
+        color: HighlightText;
+    }
+    
+    .explainer-tooltip {
+        background: Canvas;
+        color: CanvasText;
+        border: 2px solid CanvasText;
+    }
+    
+    .explainer-tooltip::before {
+        border-bottom-color: CanvasText;
+    }
+    
+    .explainer-tooltip.above::before {
+        border-top-color: CanvasText;
+    }
+}
+
+/* =============================================================================
+   Print Styles
+   ============================================================================= */
+
+/* =============================================================================
+   Multi-Thumb SVG Slider (Desktop)
+   ============================================================================= */
+
+/* Multi-thumb slider container */
+body .explainer-multi-slider,
+html body .explainer-multi-slider,
+div .explainer-multi-slider,
+.explainer-multi-slider {
+    width: 100% !important;
+    height: 50px !important;
+    overflow: visible !important;
+}
+
+/* Slider rail */
+body .slider-rail,
+html body .slider-rail,
+div .slider-rail,
+.slider-rail {
+    fill: var(--explainer-slider-track-color, rgba(255, 255, 255, 0.3)) !important;
+    stroke: none !important;
+}
+
+/* Thumb circles */
+body .slider-thumb,
+html body .slider-thumb,
+div .slider-thumb,
+.slider-thumb {
+    fill: var(--explainer-slider-track-color, rgba(255, 255, 255, 0.6)) !important;
+    stroke: var(--explainer-tooltip-bg-color, rgba(0, 0, 0, 0.9)) !important;
+    stroke-width: 2px !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Active thumb */
+body .slider-thumb.active,
+html body .slider-thumb.active,
+div .slider-thumb.active,
+.slider-thumb.active {
+    fill: var(--explainer-slider-thumb-color, #8b5cf6) !important;
+    stroke-width: 3px !important;
+    r: 10 !important;
+}
+
+/* Hover state for inactive thumbs */
+body .slider-thumb.hover,
+html body .slider-thumb.hover,
+div .slider-thumb.hover,
+.slider-thumb.hover {
+    fill: var(--explainer-slider-track-color, rgba(255, 255, 255, 0.8)) !important;
+    r: 9 !important;
+}
+
+/* Thumb labels */
+body .thumb-label,
+html body .thumb-label,
+div .thumb-label,
+.thumb-label {
+    fill: var(--explainer-tooltip-text-color, #ffffff) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-anchor: middle !important;
+    pointer-events: none !important;
+}
+
+/* Active thumb group */
+body .thumb-group.active .thumb-label,
+html body .thumb-group.active .thumb-label,
+div .thumb-group.active .thumb-label,
+.thumb-group.active .thumb-label {
+    font-weight: 600 !important;
+    font-size: 13px !important;
+}
+
+/* Focus styles for accessibility */
+body .thumb-group:focus,
+html body .thumb-group:focus,
+div .thumb-group:focus,
+.thumb-group:focus {
+    outline: 2px solid var(--explainer-slider-track-color, rgba(255, 255, 255, 1.0)) !important;
+    outline-offset: 2px !important;
+}
+
+/* =============================================================================
+   Mobile Reading Level Dropdown
+   ============================================================================= */
+
+/* Mobile dropdown container - hidden by default */
+body .explainer-reading-level-mobile,
+html body .explainer-reading-level-mobile,
+div .explainer-reading-level-mobile,
+.explainer-reading-level-mobile {
+    display: none !important;
+    padding: 12px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 8px !important;
+    margin: 8px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Mobile dropdown label */
+body .explainer-mobile-label,
+html body .explainer-mobile-label,
+div .explainer-mobile-label,
+.explainer-mobile-label {
+    display: block !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: var(--explainer-tooltip-text-color, #ffffff) !important;
+    margin-bottom: 8px !important;
+    text-align: left !important;
+}
+
+/* Mobile dropdown select */
+body .explainer-reading-level-dropdown,
+html body .explainer-reading-level-dropdown,
+div .explainer-reading-level-dropdown,
+.explainer-reading-level-dropdown {
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 12px 16px !important;
+    border: 2px solid var(--explainer-slider-track-color, #007cba) !important;
+    border-radius: 6px !important;
+    background: white !important;
+    color: #333 !important;
+    font-size: 16px !important; /* Prevents iOS zoom */
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 12px !important;
+}
+
+/* Focus state for mobile dropdown */
+body .explainer-reading-level-dropdown:focus,
+html body .explainer-reading-level-dropdown:focus,
+div .explainer-reading-level-dropdown:focus,
+.explainer-reading-level-dropdown:focus {
+    outline: none !important;
+    border-color: var(--explainer-slider-track-color, #007cba) !important;
+    box-shadow: 0 0 0 3px rgba(0, 124, 186, 0.2) !important;
+}
+
+/* =============================================================================
+   Responsive Behavior
+   ============================================================================= */
+
+/* Mobile/Touch - Show dropdown, hide desktop slider */
+@media (max-width: 768px), (hover: none) {
+    /* Hide desktop slider */
+    body .explainer-reading-level-slider,
+    html body .explainer-reading-level-slider,
+    div .explainer-reading-level-slider,
+    .explainer-reading-level-slider {
+        display: none !important;
+    }
+    
+    /* Show mobile dropdown */
+    body .explainer-reading-level-mobile,
+    html body .explainer-reading-level-mobile,
+    div .explainer-reading-level-mobile,
+    .explainer-reading-level-mobile {
+        display: block !important;
+    }
+}
+
+/* Desktop - Show slider, hide dropdown */
+@media (min-width: 769px) and (hover: hover) {
+    body .explainer-reading-level-mobile,
+    html body .explainer-reading-level-mobile,
+    div .explainer-reading-level-mobile,
+    .explainer-reading-level-mobile {
+        display: none !important;
+    }
+    
+    body .explainer-reading-level-slider,
+    html body .explainer-reading-level-slider,
+    div .explainer-reading-level-slider,
+    .explainer-reading-level-slider {
+        display: block !important;
+    }
+}
+
+/* Touch device override (JavaScript will add this class) */
+.explainer-touch-device .explainer-reading-level-slider {
+    display: none !important;
+}
+
+.explainer-touch-device .explainer-reading-level-mobile {
+    display: block !important;
+}
+
+/* =============================================================================
+   In-Page Notification System
+   ============================================================================= */
+
+/* Notification container */
+.explainer-notifications-container {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 9999999 !important;
+    max-width: 420px !important;
+    min-width: 320px !important;
+    pointer-events: none !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Individual notification - Brand-focused design */
+.explainer-notification {
+    position: relative !important;
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%) !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3), 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 12px !important;
+    opacity: 0 !important;
+    transform: translateX(100%) scale(0.95) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    pointer-events: auto !important;
+    overflow: hidden !important;
+    min-width: 320px !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* WordPress admin positioning adjustments */
+body.wp-admin .explainer-notifications-container {
+    top: 60px !important;
+    right: 30px !important;
+}
+
+body.wp-admin .explainer-notification {
+    /* Keep the brand gradient background */
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%) !important;
+    color: #ffffff !important;
+}
+
+.explainer-notification-visible {
+    opacity: 1 !important;
+    transform: translateX(0) scale(1) !important;
+}
+
+.explainer-notification-hiding {
+    opacity: 0 !important;
+    transform: translateX(100%) scale(0.9) !important;
+}
+
+/* Notification content layout */
+.explainer-notification-content {
+    display: flex !important;
+    align-items: flex-start !important;
+    padding: 20px !important;
+    gap: 12px !important;
+}
+
+/* Icon styling */
+.explainer-notification-icon {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0 !important;
+    margin-top: 0px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 6px !important;
+}
+
+.explainer-notification-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    fill: currentColor !important;
+    display: block !important;
+}
+
+/* Spinner animation for loading */
+.explainer-notification-spinner {
+    animation: spin 1s linear infinite !important;
+}
+
+/* Body content */
+.explainer-notification-body {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+.explainer-notification-title {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    margin-bottom: 4px !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+}
+
+.explainer-notification-message {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    opacity: 0.9 !important;
+    word-wrap: break-word !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Close button */
+.explainer-notification-close {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    border-radius: 6px !important;
+    width: 28px !important;
+    height: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0.8 !important;
+    transition: all 0.2s ease !important;
+}
+
+.explainer-notification-close:hover {
+    opacity: 1 !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05) !important;
+}
+
+.explainer-notification-close:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-offset: 2px !important;
+}
+
+/* Action buttons */
+.explainer-notification-actions {
+    margin-top: var(--explainer-spacing-md) !important;
+    display: flex !important;
+    gap: var(--explainer-spacing-sm) !important;
+    flex-wrap: wrap !important;
+}
+
+.explainer-notification-button {
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    font-size: var(--explainer-font-size-sm) !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.explainer-notification-button-primary {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #8b5cf6 !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    font-weight: 600 !important;
+}
+
+.explainer-notification-button-primary:hover {
+    background: #ffffff !important;
+    color: #7c3aed !important;
+    border-color: #ffffff !important;
+    transform: scale(1.02) !important;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2) !important;
+}
+
+.explainer-notification-button-secondary {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.explainer-notification-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: scale(1.02) !important;
+}
+
+/* Type-specific styling variations - all use brand gradient base */
+.explainer-notification-success::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: rgba(16, 185, 129, 0.8) !important;
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+}
+
+.explainer-notification-error::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: rgba(239, 68, 68, 0.8) !important;
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+}
+
+.explainer-notification-warning::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: rgba(251, 191, 36, 0.8) !important;
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+}
+
+.explainer-notification-info::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: rgba(59, 130, 246, 0.8) !important;
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+}
+
+.explainer-notification-loading::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: rgba(156, 163, 175, 0.8) !important;
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+}
+
+/* Timer bar styles */
+.explainer-notification-timer-bar {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: rgba(0, 0, 0, 0.1) !important;
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.explainer-notification-timer-progress {
+    height: 100% !important;
+    width: 100% !important;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%) !important;
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    transform-origin: left !important;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.3) !important;
+}
+
+@keyframes explainer-timer-countdown {
+    from {
+        transform: scaleX(1) !important;
+    }
+    to {
+        transform: scaleX(0) !important;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .explainer-notifications-container {
+        top: 10px !important;
+        right: 10px !important;
+        left: 10px !important;
+        max-width: none !important;
+    }
+
+    .explainer-notification-content {
+        padding: var(--explainer-spacing-md) !important;
+    }
+
+    .explainer-notification-actions {
+        flex-direction: column !important;
+    }
+
+    .explainer-notification-button {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .explainer-notification {
+        background: Canvas !important;
+        color: CanvasText !important;
+        border: 2px solid CanvasText !important;
+    }
+
+    .explainer-notification-button-primary {
+        background: ButtonFace !important;
+        color: ButtonText !important;
+        border-color: ButtonText !important;
+    }
+
+    .explainer-notification-button-secondary {
+        background: Canvas !important;
+        color: CanvasText !important;
+        border-color: CanvasText !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .explainer-notification {
+        transition: opacity 0.2s ease !important;
+        transform: none !important;
+    }
+
+    .explainer-notification-visible {
+        transform: none !important;
+    }
+
+    .explainer-notification-hiding {
+        transform: none !important;
+    }
+
+    .explainer-notification-spinner {
+        animation: none !important;
+    }
+}
+
+/* WordPress admin compatibility */
+body.wp-admin .explainer-notifications-container {
+    top: 52px !important;
+    right: 40px !important;
+}
+
+@media screen and (max-width: 782px) {
+    body.wp-admin .explainer-notifications-container {
+        top: 56px !important;
+        right: 20px !important;
+        left: 20px !important;
+        max-width: none !important;
+    }
+}
+
+/* Better positioning for WordPress admin pages with sidebar */
+body.wp-admin.folded .explainer-notifications-container {
+    right: 40px !important;
+}
+
+body.wp-admin:not(.folded) .explainer-notifications-container {
+    right: 40px !important;
+}
+
+/* Adjust for screen options and help tabs */
+body.wp-admin .explainer-notifications-container {
+    z-index: 99999999 !important; /* Much higher than modal backdrop */
+    /* Isolate from backdrop filter effects */
+    isolation: isolate !important;
+    will-change: transform !important;
+}
+
+/* Ensure notifications appear above WordPress admin elements */
+.wp-admin .explainer-notifications-container {
+    z-index: 99999999 !important;
+}
+
+/* =============================================================================
+   AI Terms Management Modal
+   ============================================================================= */
+
+/* Modal backdrop */
+.explainer-modal-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    z-index: 9999999 !important;
+    display: none !important; /* Hidden by default */
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    backdrop-filter: blur(2px) !important;
+    pointer-events: none !important; /* Prevent interaction when hidden */
+}
+
+.explainer-modal-backdrop.visible {
+    display: flex !important; /* Show when visible */
+    opacity: 1 !important;
+    pointer-events: auto !important; /* Enable interaction when visible */
+}
+
+/* Prevent body scroll when modal is open */
+body.explainer-modal-open {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+/* Modal container */
+.explainer-modal-container {
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+    width: 90vw !important;
+    max-width: 1200px !important;
+    max-height: 90vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transform: scale(0.95) translateY(-20px) !important;
+    transition: transform 0.3s ease !important;
+    overflow: hidden !important;
+}
+
+.explainer-modal-backdrop.visible .explainer-modal-container {
+    transform: scale(1) translateY(0) !important;
+}
+
+/* Modal header */
+.explainer-modal-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 20px 24px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    background: linear-gradient(135deg, var(--primary-purple, #8b5cf6) 0%, var(--primary-pink, #ec4899) 100%) !important;
+    color: #ffffff !important;
+    flex-shrink: 0 !important;
+}
+
+.explainer-modal-title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+}
+
+.explainer-modal-close {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: none !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 6px !important;
+}
+
+.explainer-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Modal toolbar */
+/* Modal Toolbar - Rebuilt for perfect alignment */
+.explainer-modal-toolbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 24px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    background: #f8fafc !important;
+    flex-shrink: 0 !important;
+    gap: 16px !important;
+    /* Force consistent box-sizing */
+    box-sizing: border-box !important;
+}
+
+.explainer-toolbar-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex: 1 !important;
+    /* Ensure consistent height context */
+    min-height: 32px !important;
+}
+
+.explainer-toolbar-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    /* Ensure consistent height context */
+    min-height: 32px !important;
+}
+
+/* Force all toolbar form elements to exact same specifications */
+.explainer-search-input,
+.explainer-filter-select,
+.explainer-create-term {
+    height: 32px !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 4px 8px !important;
+    border: 1px solid #8b949e !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+    vertical-align: top !important;
+    flex-shrink: 0 !important;
+}
+
+/* Specific adjustment for filter dropdown text alignment */
+.explainer-filter-select {
+    padding: 1px 8px !important; /* Lift text by 3px (4px - 1px = 3px) */
+}
+
+/* Specific adjustments for create actions container */
+.explainer-create-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    /* Remove any padding/margin that could cause misalignment */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Search container */
+.explainer-search-container {
+    position: relative !important;
+    min-width: 280px !important;
+}
+
+.explainer-search-input {
+    width: 100% !important;
+    height: 32px !important;
+    padding: 0 12px !important;
+    padding-right: 32px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    line-height: 32px !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.explainer-search-input:focus {
+    outline: none !important;
+    border-color: var(--primary-purple, #8b5cf6) !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+}
+
+.explainer-search-clear {
+    position: absolute !important;
+    right: 4px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    min-width: auto !important;
+}
+
+/* Filter container */
+.explainer-filter-container {
+    min-width: 120px !important;
+}
+
+.explainer-filter-select {
+    width: 100% !important;
+    height: 32px !important;
+    padding: 0 12px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    line-height: 32px !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+}
+
+.explainer-filter-select:focus {
+    outline: none !important;
+    border-color: var(--primary-purple, #8b5cf6) !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+}
+
+/* Bulk actions */
+.explainer-bulk-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.explainer-bulk-select {
+    padding: 8px 12px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    background: #ffffff !important;
+    min-width: 120px !important;
+}
+
+/* Modal content */
+.explainer-modal-content {
+    flex: 1 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+}
+
+.explainer-terms-container {
+    flex: 1 !important;
+    overflow: auto !important;
+    height: 500px !important; /* Fixed height for consistency */
+    min-height: 400px !important;
+}
+
+/* Terms header */
+.explainer-terms-header {
+    display: grid !important;
+    grid-template-columns: 2fr 120px 100px 100px !important;
+    gap: 16px !important;
+    align-items: center !important;
+    padding: 12px 24px !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+    background: #f8fafc !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    color: #374151 !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+}
+
+/* Terms list */
+.explainer-terms-list {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.explainer-term-row {
+    display: grid !important;
+    grid-template-columns: 2fr 120px 100px 100px !important;
+    gap: 16px !important;
+    align-items: center !important;
+    padding: 16px 24px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.explainer-term-row:hover {
+    background: #f8fafc !important;
+}
+
+.explainer-term-row.selected {
+    background: #f0f9ff !important;
+}
+
+/* New term styling (24 hours) */
+.explainer-term-row.explainer-new-term {
+    background: #f8fafc !important; /* Pale grey background */
+    border-left: 3px solid #10b981 !important; /* Green accent border */
+}
+
+.explainer-term-row.explainer-new-term:hover {
+    background: #f1f5f9 !important; /* Slightly darker on hover */
+}
+
+/* New term icon */
+.explainer-new-icon {
+    margin-left: 8px !important;
+    color: #10b981 !important; /* Green color */
+    font-size: 14px !important;
+    animation: sparkle 2s ease-in-out infinite !important;
+}
+
+/* Sparkle animation for new icon */
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Required field indicator */
+.explainer-required-indicator {
+    color: #dc2626 !important;
+    font-weight: bold !important;
+    margin-left: 4px !important;
+}
+
+/* Required field and error styling */
+.explainer-explanation-textarea.required {
+    border-left: 3px solid #dc2626 !important;
+}
+
+.explainer-explanation-textarea.error {
+    border: 2px solid #dc2626 !important;
+    background-color: #fef2f2 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+/* Term checkbox */
+.explainer-term-checkbox,
+.explainer-header-checkbox {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.explainer-checkbox-input {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 4px !important;
+    border: 2px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.explainer-checkbox-input:checked {
+    background: var(--primary-purple, #8b5cf6) !important;
+    border-color: var(--primary-purple, #8b5cf6) !important;
+}
+
+.explainer-checkbox-input:focus {
+    outline: 2px solid var(--primary-purple, #8b5cf6) !important;
+    outline-offset: 2px !important;
+}
+
+/* Term text */
+.explainer-term-text {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #374151 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+/* Term status toggle */
+.explainer-term-status {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.explainer-toggle-switch {
+    position: relative !important;
+    display: inline-block !important;
+    width: 44px !important;
+    height: 24px !important;
+    cursor: pointer !important;
+}
+
+.explainer-toggle-input {
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.explainer-toggle-slider {
+    position: absolute !important;
+    cursor: pointer !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: #cbd5e1 !important;
+    transition: 0.3s !important;
+    border-radius: 24px !important;
+}
+
+.explainer-toggle-slider:before {
+    position: absolute !important;
+    content: "" !important;
+    height: 20px !important;
+    width: 20px !important;
+    left: 2px !important;
+    bottom: 2px !important;
+    background-color: #ffffff !important;
+    transition: 0.3s !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.explainer-toggle-input:checked + .explainer-toggle-slider {
+    background-color: var(--primary-purple, #8b5cf6) !important;
+}
+
+.explainer-toggle-input:checked + .explainer-toggle-slider:before {
+    transform: translateX(20px) !important;
+}
+
+.explainer-status-text {
+    font-size: 12px !important;
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+}
+
+/* Term usage */
+.explainer-term-usage {
+    font-size: 14px !important;
+    color: #374151 !important;
+    text-align: center !important;
+}
+
+.explainer-usage-count {
+    font-weight: 500 !important;
+}
+
+/* Term actions */
+.explainer-term-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+}
+
+.explainer-term-edit,
+.explainer-term-delete {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    min-width: auto !important;
+}
+
+.explainer-term-edit:hover {
+    color: var(--primary-purple, #8b5cf6) !important;
+}
+
+.explainer-term-delete:hover {
+    color: #ef4444 !important;
+}
+
+/* Empty state */
+.explainer-terms-empty {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 80px 24px !important;
+    text-align: center !important;
+}
+
+.explainer-empty-icon {
+    width: 48px !important;
+    height: 48px !important;
+    color: #9ca3af !important;
+    margin-bottom: 16px !important;
+}
+
+.explainer-empty-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    margin: 0 0 8px 0 !important;
+}
+
+.explainer-empty-message {
+    font-size: 14px !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+    max-width: 400px !important;
+    line-height: 1.5 !important;
+}
+
+/* Loading state */
+.explainer-terms-loading {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 80px 24px !important;
+    gap: 16px !important;
+}
+
+/* State management classes - must come after display rules to override !important */
+.explainer-terms-list.hidden,
+.explainer-terms-empty.hidden,
+.explainer-terms-loading.hidden {
+    display: none !important;
+}
+
+.explainer-loading-spinner {
+    width: 32px !important;
+    height: 32px !important;
+    color: var(--primary-purple, #8b5cf6) !important;
+}
+
+/* Modal footer */
+.explainer-modal-footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 24px !important;
+    border-top: 1px solid #e2e8f0 !important;
+    background: #f8fafc !important;
+    flex-shrink: 0 !important;
+}
+
+/* Pagination */
+.explainer-pagination-container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 24px !important;
+}
+
+.explainer-pagination-info {
+    font-size: 14px !important;
+    color: #6b7280 !important;
+}
+
+.explainer-pagination-controls {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.explainer-page-numbers {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.explainer-page-number {
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+}
+
+.explainer-page-number:hover {
+    background: #f1f5f9 !important;
+}
+
+.explainer-page-number.current {
+    background: var(--primary-purple, #8b5cf6) !important;
+    color: #ffffff !important;
+}
+
+.explainer-page-prev,
+.explainer-page-next {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    min-width: auto !important;
+}
+
+/* Footer actions */
+.explainer-footer-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* Screen reader only */
+.explainer-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .explainer-modal-container {
+        width: 95vw !important;
+        max-height: 95vh !important;
+    }
+    
+    .explainer-modal-toolbar {
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: stretch !important;
+    }
+    
+    .explainer-toolbar-left {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+    }
+    
+    .explainer-search-container {
+        min-width: auto !important;
+    }
+    
+    .explainer-terms-header {
+        grid-template-columns: 2fr 60px 80px !important;
+        padding: 12px 16px !important;
+        font-size: 12px !important;
+    }
+    
+    .explainer-term-row {
+        grid-template-columns: 2fr 60px 80px !important;
+        padding: 12px 16px !important;
+        gap: 12px !important;
+    }
+    
+    .explainer-header-usage,
+    .explainer-term-usage {
+        display: none !important;
+    }
+    
+    .explainer-header-actions,
+    .explainer-term-actions {
+        display: none !important;
+    }
+    
+    .explainer-modal-footer {
+        flex-direction: column !important;
+        gap: 16px !important;
+        align-items: stretch !important;
+    }
+    
+    .explainer-pagination-container {
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+}
+
+/* Keyboard navigation */
+.explainer-term-row:focus-within {
+    background: #f0f9ff !important;
+    outline: 2px solid var(--primary-purple, #8b5cf6) !important;
+    outline-offset: -2px !important;
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+    .explainer-modal-backdrop {
+        background: Canvas !important;
+    }
+    
+    .explainer-modal-container {
+        background: Canvas !important;
+        border: 2px solid CanvasText !important;
+    }
+    
+    .explainer-modal-header {
+        background: Canvas !important;
+        color: CanvasText !important;
+        border-bottom: 2px solid CanvasText !important;
+    }
+    
+    .explainer-checkbox-input:checked {
+        background: Highlight !important;
+        border-color: Highlight !important;
+    }
+    
+    .explainer-toggle-input:checked + .explainer-toggle-slider {
+        background-color: Highlight !important;
+    }
+}
+
+/* =============================================================================
+   Terms Modal Edit Panel Styles
+   ============================================================================= */
+
+/* Edit panel container */
+.explainer-term-edit-panel {
+    margin-top: 1px;
+    border: 1px solid #ddd;
+    border-top: none;
+    background: #ffffff !important;
+    border-radius: 0 0 4px 4px;
+}
+
+.explainer-edit-panel-container {
+    padding: 20px;
+    background: #ffffff !important;
+}
+
+/* Reading levels container */
+.explainer-reading-levels-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-bottom: 20px;
+}
+
+/* Individual reading level blocks - match explanations tab styling */
+.explainer-reading-level-block {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+.explainer-level-header {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f5f5;
+    transition: background-color 0.2s ease;
+}
+
+/* Removed hover effect */
+
+body .explainer-level-label,
+html body .explainer-level-label,
+div .explainer-level-label,
+.explainer-level-label {
+    font-weight: normal !important;
+    color: #23282d !important;
+    font-size: 14px !important;
+}
+
+.explainer-level-toggle {
+    color: #666;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.explainer-level-toggle:hover {
+    color: #135e96;
+}
+
+/* Level content area */
+.explainer-level-content {
+    display: none;
+    padding: 15px;
+}
+
+.explainer-explanation-text {
+    width: 100%;
+    min-height: 80px;
+    padding: 8px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.4;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.explainer-explanation-text:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+.explainer-explanation-text::placeholder {
+    color: #8c8f94;
+    font-style: italic;
+}
+
+/* Level actions */
+.explainer-level-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.explainer-level-actions .btn-base {
+    font-size: 13px;
+    padding: 6px 12px;
+}
+
+/* Panel actions */
+.explainer-edit-panel-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.explainer-edit-panel-actions .btn-base {
+    min-width: 100px;
+}
+
+/* Loading states for generate buttons */
+.explainer-generate-explanation:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.explainer-generate-explanation:disabled::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .explainer-edit-panel-container {
+        padding: 15px;
+    }
+    
+    .explainer-level-header {
+        padding: 10px 12px;
+    }
+    
+    .explainer-level-content {
+        padding: 12px;
+    }
+    
+    .explainer-edit-panel-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+    
+    .explainer-level-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .explainer-level-actions .btn-base {
+        justify-content: center;
+    }
+}
+
+/* Dark mode support - override to keep white background */
+@media (prefers-color-scheme: dark) {
+    .explainer-term-edit-panel {
+        background: #ffffff !important;
+        border-color: #ddd !important;
+    }
+    
+    .explainer-reading-level-block {
+        background: white !important;
+        border-color: #ccc !important;
+    }
+    
+    .explainer-level-header {
+        background: #f5f5f5 !important;
+        color: #1d2327 !important;
+    }
+    
+    /* Removed hover effect */
+    
+    .explainer-level-label {
+        color: #23282d !important;
+    }
+    
+    .explainer-level-content {
+        background: #ffffff !important;
+    }
+    
+    .explainer-explanation-text {
+        background: #ffffff !important;
+        border-color: #8c8f94 !important;
+        color: #1d2327 !important;
+    }
+    
+    .explainer-explanation-text:focus {
+        border-color: #2271b1 !important;
+        box-shadow: 0 0 0 1px #2271b1 !important;
+    }
+    
+    .explainer-edit-panel-actions {
+        border-color: #ddd !important;
+        background: #ffffff !important;
+    }
+}
+
+/* =============================================================================
+   Create Term Form Styles
+   ============================================================================= */
+
+/* Create new term form - positioned as overlay */
+.explainer-create-term-form {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 1000 !important;
+    display: none !important;
+}
+
+.explainer-create-term-form:not(.hidden) {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Form overlay backdrop */
+.explainer-create-form-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    z-index: 1 !important;
+}
+
+/* Form container positioned over backdrop */
+.explainer-create-form-container {
+    position: relative !important;
+    z-index: 2 !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+    margin: 24px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    max-height: calc(100% - 48px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Form header with close button */
+.explainer-create-form-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 24px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    background: #f8fafc !important;
+    border-radius: 8px 8px 0 0 !important;
+    flex-shrink: 0 !important;
+}
+
+.explainer-create-title {
+    margin: 0 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+}
+
+.explainer-create-form-close {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: #64748b !important;
+    border: none !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.explainer-create-form-close:hover {
+    background: rgba(0, 0, 0, 0.1) !important;
+    color: #374151 !important;
+}
+
+/* Form content area - scrollable */
+/* Form content - scrollable independently */
+.explainer-create-form-content {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 24px !important;
+    /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+}
+
+/* Scroll lock for background when form is open */
+.explainer-modal-container.scroll-locked {
+    overflow: hidden !important;
+}
+
+.explainer-modal-container.scroll-locked .explainer-modal-content {
+    overflow: hidden !important;
+}
+
+.explainer-modal-container.scroll-locked .explainer-terms-container {
+    overflow: hidden !important;
+}
+
+.explainer-create-field {
+    margin-bottom: 20px;
+}
+
+.explainer-field-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+}
+
+.explainer-text-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #ffffff;
+    transition: border-color 0.2s ease;
+}
+
+.explainer-text-input:focus {
+    outline: none;
+    border-color: var(--primary-purple, #8b5cf6);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* Error state for form inputs */
+.explainer-text-input.error,
+.explainer-explanation-textarea.error {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.explainer-text-input.error:focus,
+.explainer-explanation-textarea.error:focus {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2) !important;
+}
+
+.explainer-field-help {
+    margin: 6px 0 0 0;
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.explainer-field-warning {
+    font-size: 13px;
+    color: #dc2626;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 4px;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.explainer-field-warning .dashicons {
+    margin-top: 1px;
+    font-size: 16px;
+}
+
+.explainer-field-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Test button specific styling */
+.explainer-test-term {
+    width: auto !important;
+    max-width: 200px !important;
+    flex-shrink: 0 !important;
+}
+
+.explainer-test-result {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.explainer-test-found {
+    color: #059669;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.explainer-test-not-found {
+    color: #dc2626;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.explainer-create-explanations {
+    margin: 24px 0;
+}
+
+.explainer-explanations-title {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.explainer-create-level-block {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+}
+
+.explainer-create-level-block .explainer-level-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+}
+
+.explainer-explanation-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #ffffff;
+    transition: border-color 0.2s ease;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.explainer-explanation-textarea:focus {
+    outline: none;
+    border-color: var(--primary-purple, #8b5cf6);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+
+.explainer-create-actions {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: flex-start !important; /* Left align buttons */
+    align-items: center !important; /* Vertically center on same line */
+}
+
+/* Mobile responsiveness for create form */
+@media (max-width: 768px) {
+    .explainer-create-form-container {
+        margin: 16px !important;
+        max-height: calc(100vh - 32px) !important;
+    }
+    
+    .explainer-create-form-content {
+        padding: 16px !important;
+        max-height: 60vh !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-height: 600px) {
+    .explainer-create-form-container {
+        max-height: calc(100vh - 24px) !important;
+        margin: 12px !important;
+    }
+    
+    .explainer-create-form-content {
+        max-height: 50vh !important;
+        padding: 16px !important;
+    }
+    
+    .explainer-create-level-block {
+        margin-bottom: 12px !important;
+        padding: 12px !important;
+    }
+    
+    .explainer-explanation-textarea {
+        min-height: 60px !important;
+        resize: vertical !important;
+    }
+}
+
+/* =============================================================================
+   Onboarding Demo Styles (Protected from Admin Exclusions)
+   ============================================================================= */
+
+/* Onboarding demo content that uses the real explainer functionality */
+.explainer-onboarding-selectable {
+    /* Make it clear this text is interactive */
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+.explainer-onboarding-selectable .explainer-demo-target {
+    /* Subtle visual hint that this is selectable */
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%) !important;
+    border-radius: 3px !important;
+    padding: 1px 3px !important;
+    transition: background 0.2s ease !important;
+}
+
+.explainer-onboarding-selectable .explainer-demo-target:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%) !important;
+}
+
+/* Ensure these styles cannot be overridden by theme conflicts */
+html .explainer-onboarding-selectable,
+body .explainer-onboarding-selectable,
+div .explainer-onboarding-selectable {
+    cursor: pointer !important;
+}
+
+/* =============================================================================
+   Print Styles
+   ============================================================================= */
+
+@media print {
+    .explainer-toggle,
+    .explainer-tooltip,
+    .explainer-selection-highlight,
+    .explainer-notifications-container,
+    .explainer-modal-backdrop,
+    .explainer-term-edit-panel {
+        display: none !important;
+    }
+}

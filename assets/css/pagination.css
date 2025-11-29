@@ -1,0 +1,369 @@
+/**
+ * Pagination Styles for WP AI Explainer
+ * 
+ * WordPress admin-compatible pagination styling for all admin sections.
+ * Matches WordPress core admin table pagination appearance and behaviour.
+ * 
+ * @package WPAIExplainer
+ * @since 1.3.0
+ */
+
+/* ==========================================================================
+   Pagination Container
+   ========================================================================== */
+
+.explainer-pagination {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Ensure pagination is visible */
+.tablenav-pages {
+    display: flex !important;
+    align-items: center;
+    gap: 5px;
+    margin: 6px 0;
+}
+
+.tablenav-pages .displaying-num {
+    font-size: 13px;
+    font-style: italic;
+    color: #646970;
+    margin-right: 10px;
+}
+
+/* ==========================================================================
+   Pagination Links
+   ========================================================================== */
+
+.pagination-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.pagination-links .button,
+.pagination-links .tablenav-pages-navspan {
+    min-width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0 8px;
+    border: 1px solid #c3c4c7;
+    background: #f6f7f7;
+    color: #50575e;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.pagination-links .button:hover {
+    background: #f0f0f1;
+    border-color: #8c8f94;
+    color: #1d2327;
+}
+
+.pagination-links .button:active {
+    background: #f6f7f7;
+    border-color: #8c8f94;
+    transform: none;
+    box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+}
+
+.pagination-links .button:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: 2px solid transparent;
+}
+
+/* Disabled state */
+.pagination-links .button:disabled,
+.pagination-links .tablenav-pages-navspan.disabled {
+    background: #f6f7f7 !important;
+    border-color: #dcdcde !important;
+    color: #a7aaad !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+}
+
+/* Current page indicator */
+.pagination-links .button.current {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Page Input
+   ========================================================================== */
+
+.paging-input {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 5px;
+}
+
+.paging-input .current-page {
+    width: 60px;
+    height: 32px;
+    margin: 0;
+    padding: 0 8px;
+    border: 1px solid #c3c4c7;
+    background: #fff;
+    color: #2c3338;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+.paging-input .current-page:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: 2px solid transparent;
+}
+
+.paging-input .current-page:disabled {
+    background: #f6f7f7;
+    border-color: #dcdcde;
+    color: #a7aaad;
+    cursor: not-allowed;
+}
+
+.paging-input .tablenav-paging-text {
+    font-size: 13px;
+    color: #646970;
+}
+
+.paging-input .total-pages {
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.paging-input .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Loading States
+   ========================================================================== */
+
+.pagination-loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.pagination-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+}
+
+/* Loading spinner specifically for pagination */
+.explainer-pagination-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #2271b1;
+    border-radius: 50%;
+    animation: pagination-spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes pagination-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Sort Links Integration
+   ========================================================================== */
+
+.wp-list-table .sort-link {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.wp-list-table .sort-link:hover {
+    color: #2271b1;
+}
+
+.wp-list-table .sort-link.sorted {
+    color: #1d2327;
+}
+
+.wp-list-table .sort-link .sorting-indicators {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.wp-list-table .sort-link .sorting-indicator {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    opacity: 0.3;
+}
+
+.wp-list-table .sort-link .sorting-indicator.asc {
+    border-bottom: 4px solid #646970;
+    margin-bottom: 1px;
+}
+
+.wp-list-table .sort-link .sorting-indicator.desc {
+    border-top: 4px solid #646970;
+}
+
+.wp-list-table .sort-link.sorted.asc .sorting-indicator.asc,
+.wp-list-table .sort-link.sorted.desc .sorting-indicator.desc {
+    opacity: 1;
+    border-color: #2271b1;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media screen and (max-width: 782px) {
+    .explainer-pagination {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .tablenav-pages {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .tablenav-pages .displaying-num {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .pagination-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .pagination-links .button,
+    .pagination-links .tablenav-pages-navspan {
+        min-width: 44px;
+        height: 44px;
+        font-size: 16px;
+        line-height: 42px;
+    }
+    
+    .paging-input .current-page {
+        width: 80px;
+        height: 44px;
+        font-size: 16px;
+        line-height: 42px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pagination-links .button span {
+        display: none;
+    }
+    
+    .pagination-links .button::after {
+        font-family: dashicons;
+        font-size: 16px;
+        line-height: 1;
+    }
+    
+    .pagination-links .first-page::after {
+        content: '\f100';
+    }
+    
+    .pagination-links .prev-page::after {
+        content: '\f104';
+    }
+    
+    .pagination-links .next-page::after {
+        content: '\f105';
+    }
+    
+    .pagination-links .last-page::after {
+        content: '\f101';
+    }
+}
+
+/* ==========================================================================
+   Integration with Existing Styles
+   ========================================================================== */
+
+/* Ensure compatibility with existing admin styles */
+.wp-ai-explainer-admin .tablenav-pages {
+    margin: 10px 0;
+}
+
+/* Override any conflicting styles from WordPress core */
+.wp-list-table + .explainer-pagination .tablenav-pages {
+    margin-top: 15px;
+}
+
+/* Empty state compatibility */
+.wp-list-table tbody tr td[colspan] + * .explainer-pagination {
+    display: none;
+}
+
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .pagination-links .button,
+    .pagination-links .tablenav-pages-navspan {
+        border-width: 2px;
+    }
+    
+    .pagination-links .button:focus {
+        box-shadow: 0 0 0 2px #2271b1;
+    }
+    
+    .paging-input .current-page:focus {
+        box-shadow: 0 0 0 2px #2271b1;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .explainer-pagination,
+    .tablenav-pages {
+        display: none !important;
+    }
+}

@@ -1,0 +1,1255 @@
+/*!
+ * Premium WordPress Plugin Branding Framework
+ * Version: 1.0.0
+ * Author: WP AI Explainer (info@wpaiexplainer.com)
+ * 
+ * A sophisticated branding system for WordPress plugins that communicates
+ * enterprise-grade quality through professional design.
+ */
+
+/* ===================================================================
+   CSS CUSTOM PROPERTIES - CUSTOMISED FOR WP AI EXPLAINER
+   =================================================================== */
+
+/* Brand colors are now dynamically generated from includes/brand-colors.php */
+/* CSS custom properties are injected via wp_add_inline_style() */
+
+:root {
+    /* Plugin Customisation */
+    --plugin-name: "WP AI Explainer"; /* Plugin name for hero */
+    --plugin-hero-padding: 24px 32px; /* Hero block padding */
+    --plugin-border-radius: 8px;    /* Consistent border radius */
+}
+
+/* ===================================================================
+   PREMIUM HERO TITLE BLOCK
+   =================================================================== */
+
+/* Scope to plugin admin pages only using specific page classes */
+.explainer-admin-wrap h1.wp-heading-inline,
+.job-queue-wrap h1.wp-heading-inline,
+.wpaie-customer-account + h1,
+body.wp-admin .wrap.explainer-admin-wrap h1,
+body.wp-admin .wrap.job-queue-wrap h1 {
+    position: relative;
+    color: white;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--plugin-primary) 0%, var(--plugin-vibrant) 100%);
+    padding: var(--plugin-hero-padding);
+    margin: -10px -40px 20px -40px;
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.explainer-admin-wrap h1.wp-heading-inline::after,
+.job-queue-wrap h1.wp-heading-inline::after,
+.wpaie-customer-account + h1::after,
+body.wp-admin .wrap.explainer-admin-wrap h1::after,
+body.wp-admin .wrap.job-queue-wrap h1::after {
+    display: none; /* Remove default underline */
+}
+
+/* ===================================================================
+   TAB NAVIGATION BRANDING
+   =================================================================== */
+
+.nav-tab-wrapper .nav-tab {
+    position: relative;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.nav-tab-wrapper .nav-tab-active {
+    background: var(--plugin-light-purple);
+    border-color: var(--plugin-primary);
+    color: var(--plugin-primary);
+    font-weight: 600;
+}
+
+.nav-tab-wrapper .nav-tab-active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--plugin-primary), var(--plugin-vibrant));
+    border-radius: 0 0 2px 2px;
+}
+
+/* ===================================================================
+   PREMIUM FORM FIELDS & COMPONENTS
+   =================================================================== */
+
+/* Enhanced field styling with subtle branding */
+.plugin-field {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plugin-field:hover {
+    border-color: var(--plugin-vibrant);
+    box-shadow: 0 1px 3px rgba(236, 72, 153, 0.1);
+}
+
+/* Labels with premium styling */
+.plugin-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--plugin-primary);
+    font-size: 15px;
+    letter-spacing: -0.01em;
+}
+
+/* Toggle labels with performance branding */
+.plugin-toggle-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--plugin-primary);
+    cursor: pointer;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.plugin-toggle-label:hover {
+    color: var(--plugin-vibrant);
+}
+
+.plugin-toggle-text {
+    flex: 1;
+}
+
+/* Active feature indicator */
+.plugin-toggle-label input[type="checkbox"]:checked + .plugin-toggle-text::after {
+    content: "";
+}
+
+/* Input groups with professional styling */
+.plugin-input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.plugin-unit {
+    color: #757575;
+    font-size: 14px;
+}
+
+.plugin-current-value {
+    color: var(--plugin-success);
+    font-weight: 600;
+    font-size: 14px;
+    background: var(--plugin-light-pink);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+/* ===================================================================
+   COLLAPSIBLE HELP SECTIONS
+   =================================================================== */
+
+.plugin-help {
+    margin-top: 12px;
+}
+
+.plugin-help summary {
+    cursor: pointer;
+    color: var(--plugin-accent);
+    font-size: 14px;
+    padding: 8px 0;
+    border: none;
+    background: none;
+    outline: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.plugin-help summary:hover {
+    color: var(--plugin-vibrant);
+}
+
+.plugin-help-content {
+    padding: 12px 0 0 0;
+    color: #50575e;
+    line-height: 1.5;
+}
+
+.plugin-help-content p {
+    margin: 0 0 12px 0;
+}
+
+.plugin-help-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===================================================================
+   PREMIUM SECTION HEADERS
+   =================================================================== */
+
+.plugin-section {
+    background: var(--plugin-bg-slate);
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.plugin-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--plugin-primary), var(--plugin-vibrant));
+}
+
+.plugin-section h3 {
+    margin: 0 0 12px 0;
+    color: var(--plugin-primary);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.plugin-section p {
+    margin: 0;
+    color: #50575e;
+    line-height: 1.5;
+}
+
+/* ===================================================================
+   ENHANCED BUTTON STYLING
+   =================================================================== */
+
+/* Scope button styles to plugin pages only */
+.explainer-admin-wrap .button-primary,
+.job-queue-wrap .button-primary,
+.wpaie-customer-account .button-primary {
+    background: var(--plugin-primary) !important;
+    border-color: var(--plugin-primary) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 4px rgba(139, 92, 246, 0.2) !important;
+    transition: all 0.2s ease !important;
+    text-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+}
+
+.explainer-admin-wrap .button-primary:hover,
+.job-queue-wrap .button-primary:hover,
+.wpaie-customer-account .button-primary:hover {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    transform: scale(1.02) !important;
+    box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3) !important;
+}
+
+.explainer-admin-wrap .button-secondary,
+.job-queue-wrap .button-secondary,
+.wpaie-customer-account .button-secondary {
+    border-color: var(--plugin-accent) !important;
+    color: var(--plugin-accent) !important;
+    font-weight: 500 !important;
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+}
+
+.explainer-admin-wrap .button-secondary:hover,
+.job-queue-wrap .button-secondary:hover,
+.wpaie-customer-account .button-secondary:hover {
+    border-color: var(--plugin-vibrant) !important;
+    color: var(--plugin-vibrant) !important;
+    box-shadow: 0 2px 4px rgba(236, 72, 153, 0.2) !important;
+}
+
+/* ===================================================================
+   SIDEBAR STYLING
+   =================================================================== */
+
+.plugin-sidebar {
+    flex: 0 0 300px;
+}
+
+.plugin-sidebar .postbox {
+    margin-bottom: 20px;
+    border: 1px solid var(--plugin-border);
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.08);
+    background: #fff;
+    border-radius: var(--plugin-border-radius);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.plugin-sidebar .postbox:hover {
+    box-shadow: 0 2px 12px rgba(236, 72, 153, 0.15);
+}
+
+.plugin-sidebar .postbox h3.hndle {
+    padding: 16px 20px;
+    margin: 0;
+    border-bottom: 1px solid var(--plugin-border);
+    background: var(--plugin-light-purple);
+    font-weight: 700;
+    font-size: 15px;
+    cursor: default;
+    color: var(--plugin-primary);
+    letter-spacing: -0.01em;
+}
+
+.plugin-sidebar .postbox .inside {
+    padding: 20px;
+}
+
+/* ===================================================================
+   STATUS INDICATORS
+   =================================================================== */
+
+.plugin-status-indicator {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.plugin-status-indicator.active {
+    background: var(--plugin-success);
+    color: white;
+}
+
+.plugin-status-indicator.active::after {
+    content: "";
+}
+
+.plugin-status-indicator.inactive {
+    background: #d63638;
+    color: white;
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN
+   =================================================================== */
+
+@media (max-width: 782px) {
+    .explainer-admin-wrap h1.wp-heading-inline,
+    .job-queue-wrap h1.wp-heading-inline,
+    .wpaie-customer-account + h1,
+    body.wp-admin .wrap.explainer-admin-wrap h1,
+    body.wp-admin .wrap.job-queue-wrap h1 {
+        margin: -10px -20px 20px -20px;
+        padding: 20px 24px;
+        font-size: 22px;
+    }
+}
+    
+    .plugin-field {
+        padding: 16px;
+    }
+    
+    .plugin-section {
+        padding: 20px;
+    }
+    
+    .plugin-sidebar {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ===================================================================
+   ANIMATION UTILITIES
+   =================================================================== */
+
+.plugin-fade-in {
+    animation: pluginFadeIn 0.3s ease-out;
+}
+
+@keyframes pluginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plugin-pulse {
+    animation: pluginPulse 2s ease-in-out infinite;
+}
+
+@keyframes pluginPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ===================================================================
+   UTILITY CLASSES
+   =================================================================== */
+
+.plugin-hidden {
+    display: none !important;
+}
+
+.plugin-text-primary {
+    color: var(--plugin-primary) !important;
+}
+
+.plugin-text-success {
+    color: var(--plugin-success) !important;
+}
+
+.plugin-text-vibrant {
+    color: var(--plugin-vibrant) !important;
+}
+
+.plugin-bg-primary {
+    background-color: var(--plugin-primary) !important;
+}
+
+.plugin-bg-light {
+    background-color: var(--plugin-bg-slate) !important;
+}
+
+.plugin-border-vibrant {
+    border-color: var(--plugin-vibrant) !important;
+}
+
+.plugin-shadow-sm {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.plugin-shadow-md {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+}
+
+.plugin-shadow-lg {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
+}
+
+/* ===================================================================
+   PRINT STYLES
+   =================================================================== */
+
+@media print {
+    .explainer-admin-wrap h1.wp-heading-inline,
+    .job-queue-wrap h1.wp-heading-inline,
+    .wpaie-customer-account + h1,
+    body.wp-admin .wrap.explainer-admin-wrap h1,
+    body.wp-admin .wrap.job-queue-wrap h1 {
+        background: none !important;
+        color: var(--plugin-primary) !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+        border-bottom: 2px solid var(--plugin-primary) !important;
+    }
+    
+    .plugin-field {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+    
+    .plugin-section::before {
+        display: none !important;
+    }
+}
+
+/* ===================================================================
+   TAB CONTENT SPACING ADJUSTMENTS
+   =================================================================== */
+
+/* Reduce spacing between tabs and content */
+.explainer-admin-tabs {
+    margin-bottom: 0 !important;
+}
+
+.tab-content {
+    margin-top: 0 !important;
+    padding-top: 15px !important;
+}
+
+/* Reduce spacing of the first section in tab content */
+.tab-content .plugin-section:first-child {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+}
+
+/* ===================================================================
+   BUTTON HEIGHT ADJUSTMENTS FOR API KEY FIELDS
+   =================================================================== */
+
+/* Make buttons same height as input fields - scoped to plugin pages */
+.explainer-admin-wrap .form-table input[type="text"] + button,
+.explainer-admin-wrap .form-table input[type="password"] + button {
+    height: 36px !important;
+    padding: 6px 12px !important;
+    line-height: 1.4 !important;
+    vertical-align: top !important;
+    margin-left: 5px !important;
+}
+
+/* Specific styling for API key buttons using correct IDs - scoped to plugin pages */
+.explainer-admin-wrap #toggle-api-key-visibility,
+.explainer-admin-wrap #test-api-key,
+.explainer-admin-wrap #toggle-claude-key-visibility,
+.explainer-admin-wrap #test-claude-api-key {
+    height: 38px !important;
+    padding: 6px 12px !important;
+    line-height: 1.4 !important;
+    vertical-align: top !important;
+    margin-left: 5px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+}
+
+/* Additional styling for test stored API key buttons to match delete buttons */
+.test-stored-api-key {
+    margin-right: 5px !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    height: auto !important;
+}
+
+/* ===================================================================
+   INTEGRATION WITH EXISTING ADMIN STYLES
+   =================================================================== */
+
+/* Enhance existing form fields */
+.explainer-admin-wrap .form-table th {
+    color: var(--plugin-primary);
+    font-weight: normal;
+}
+
+.explainer-admin-wrap .form-table input[type="text"],
+.explainer-admin-wrap .form-table input[type="password"],
+.explainer-admin-wrap .form-table input[type="number"],
+.explainer-admin-wrap .form-table select,
+.explainer-admin-wrap .form-table textarea {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: #000000 !important;
+}
+
+.explainer-admin-wrap .form-table input[type="text"]:focus,
+.explainer-admin-wrap .form-table input[type="password"]:focus,
+.explainer-admin-wrap .form-table input[type="number"]:focus,
+.explainer-admin-wrap .form-table select:focus,
+.explainer-admin-wrap .form-table textarea:focus {
+    border-color: var(--plugin-vibrant);
+    box-shadow: 0 0 0 1px var(--plugin-vibrant);
+}
+
+/* Premium section headers */
+.explainer-admin-wrap .tab-content h2 {
+    color: var(--plugin-primary);
+    border-bottom-color: var(--plugin-border);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* Enhanced admin header */
+.explainer-admin-header {
+    background: var(--plugin-light-purple) !important;
+    border-left-color: var(--plugin-primary) !important;
+    border-radius: var(--plugin-border-radius) !important;
+}
+
+/* Status indicators with lightning bolts */
+.explainer-admin-wrap .plugin-status-indicator {
+    background: var(--plugin-success);
+    color: white;
+}
+
+.explainer-admin-wrap .plugin-status-indicator::after {
+    content: "";
+}
+
+/* Enhanced tooltip preview */
+.explainer-tooltip-preview {
+    background-color: var(--plugin-primary) !important;
+    border-radius: var(--plugin-border-radius) !important;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25) !important;
+}
+
+.explainer-tooltip-preview::before {
+    border-bottom-color: var(--plugin-primary) !important;
+}
+
+/* Preview buttons should NOT use branding - they show actual setting colors */
+/* Removed branding override from .preview-explainer-button */
+/* Let admin.css handle the preview button styling with actual setting colors */
+
+/* ===================================================================
+   HELP & SUPPORT TAB BRANDING
+   =================================================================== */
+
+/* Help Tab Styling */
+.explainer-admin-wrap #help-tab h2,
+.explainer-admin-wrap #support-tab h2 {
+    color: var(--plugin-primary);
+    border-bottom-color: var(--plugin-border);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+}
+
+/* Help Sections */
+.help-section,
+.support-section {
+    background: var(--plugin-bg-slate);
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.help-section::before,
+.support-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--plugin-primary), var(--plugin-vibrant));
+}
+
+.help-section h3,
+.support-section h3 {
+    margin: 0 0 16px 0;
+    color: var(--plugin-primary);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Collapsible sections styling */
+.support-section summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--plugin-primary);
+    margin-bottom: 16px;
+}
+
+.support-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.support-section summary::after {
+    content: '▼';
+    color: var(--plugin-primary);
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.support-section[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.support-section summary h3 {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+/* Help Steps */
+.help-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.help-step {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.help-step:hover {
+    border-color: var(--plugin-vibrant);
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.1);
+}
+
+.help-step h4 {
+    color: var(--plugin-primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+}
+
+.help-step p {
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+}
+
+.help-step ul {
+    margin: 12px 0 0 0;
+    padding-left: 20px;
+}
+
+.help-step li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.help-step li strong {
+    color: var(--plugin-primary);
+}
+
+.help-step a {
+    color: var(--plugin-vibrant);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.help-step a:hover {
+    color: var(--plugin-primary);
+    text-decoration: underline;
+}
+
+/* Help Usage List */
+.help-usage ol {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px 20px 20px 40px;
+    margin: 0;
+}
+
+.help-usage li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.help-usage li:last-child {
+    margin-bottom: 0;
+}
+
+/* Help Features */
+.help-feature {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.help-feature:last-child {
+    margin-bottom: 0;
+}
+
+.help-feature h4 {
+    color: var(--plugin-primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+}
+
+.help-feature ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.help-feature li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.help-feature li:last-child {
+    margin-bottom: 0;
+}
+
+/* Troubleshooting */
+.help-troubleshooting {
+    display: grid;
+    gap: 20px;
+}
+
+.help-issue {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-left: 4px solid var(--plugin-vibrant);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px;
+}
+
+.help-issue h4 {
+    color: var(--plugin-primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+}
+
+.help-issue ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.help-issue li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.help-issue li:last-child {
+    margin-bottom: 0;
+}
+
+/* Support Tab Styling */
+.developer-info {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px;
+}
+
+.developer-info p {
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+}
+
+.developer-info p:last-child {
+    margin-bottom: 0;
+}
+
+.developer-info strong {
+    color: var(--plugin-primary);
+    font-weight: 600;
+}
+
+.developer-info a {
+    color: var(--plugin-vibrant);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.developer-info a:hover {
+    color: var(--plugin-primary);
+    text-decoration: underline;
+}
+
+/* Project Links */
+.project-links {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px;
+}
+
+.project-links p {
+    margin: 0 0 16px 0;
+}
+
+.project-links p:last-child {
+    margin-bottom: 0;
+}
+
+.project-links strong {
+    color: var(--plugin-primary);
+    font-weight: 600;
+}
+
+.project-links .button-secondary {
+    margin-top: 8px;
+    border-color: var(--plugin-primary) !important;
+    color: var(--plugin-primary) !important;
+    font-weight: 500 !important;
+}
+
+.project-links .button-secondary:hover {
+    border-color: var(--plugin-vibrant) !important;
+    color: var(--plugin-vibrant) !important;
+    box-shadow: 0 2px 4px rgba(236, 72, 153, 0.2) !important;
+}
+
+/* Support Options */
+.support-options {
+    display: grid;
+    gap: 20px;
+}
+
+.support-option {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-option:hover {
+    border-color: var(--plugin-vibrant);
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.1);
+}
+
+.support-option h4 {
+    color: var(--plugin-primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+}
+
+.support-option p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.support-option a {
+    color: var(--plugin-vibrant);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.support-option a:hover {
+    color: var(--plugin-primary);
+    text-decoration: underline;
+}
+
+/* Support Info Needed */
+.support-info-needed {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px;
+}
+
+.support-info-needed p {
+    margin: 0 0 16px 0;
+    font-weight: 500;
+    color: var(--plugin-primary);
+}
+
+.support-info-needed ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.support-info-needed li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.support-info-needed li:last-child {
+    margin-bottom: 0;
+}
+
+/* System Information */
+.system-info {
+    background: #fff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    padding: 20px;
+}
+
+.system-info .form-table {
+    margin: 0;
+}
+
+.system-info .form-table th {
+    color: var(--plugin-primary);
+    font-weight: 600;
+    padding-left: 0;
+    width: 200px;
+}
+
+.system-info .form-table td {
+    padding-left: 0;
+    font-family: 'Courier New', monospace;
+    background: var(--plugin-bg-slate);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--plugin-accent);
+}
+
+/* Responsive Design for Help & Support */
+@media (max-width: 782px) {
+    .help-steps,
+    .help-troubleshooting,
+    .support-options {
+        gap: 16px;
+    }
+    
+    .help-step,
+    .help-issue,
+    .support-option,
+    .help-section,
+    .support-section {
+        padding: 16px;
+    }
+    
+    .system-info .form-table th {
+        width: auto;
+        display: block;
+        padding-bottom: 4px;
+    }
+    
+    .system-info .form-table td {
+        display: block;
+        padding: 8px 12px;
+        margin-bottom: 16px;
+    }
+}
+
+/* ===================================================================
+   ACCOUNT & LICENCE DASHBOARD
+   =================================================================== */
+
+.wrap .wpaie-customer-account {
+    position: relative;
+    margin-top: 24px;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid var(--plugin-border);
+    border-radius: var(--plugin-border-radius);
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+.wrap .wpaie-customer-account::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--plugin-primary), var(--plugin-vibrant));
+}
+
+.wpaie-account-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--plugin-border);
+}
+
+.wpaie-account-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--plugin-primary);
+    letter-spacing: -0.02em;
+}
+
+.wpaie-account-status {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    border: 1px solid transparent;
+}
+
+.wpaie-account-status .dashicons {
+    margin: 0;
+}
+
+.wpaie-account-status.status-active {
+    background: var(--plugin-success);
+    background: color-mix(in srgb, var(--plugin-success) 85%, #ffffff 15%);
+    color: #ffffff;
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+.wpaie-account-status.status-inactive {
+    background: var(--plugin-light_pink);
+    background: color-mix(in srgb, var(--plugin-light_pink) 70%, #ffffff 30%);
+    color: var(--plugin-secondary);
+    border-color: rgba(236, 72, 153, 0.35);
+}
+
+.wpaie-account-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-bottom: 28px;
+}
+
+@media (max-width: 960px) {
+    .wpaie-account-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.wpaie-account-section {
+    position: relative;
+    background: var(--plugin-light_purple);
+    background: color-mix(in srgb, var(--plugin-light_purple) 90%, #ffffff 10%);
+    border: 1px solid var(--plugin-border);
+    border-left: 5px solid var(--plugin-primary);
+    border-radius: calc(var(--plugin-border-radius) - 2px);
+    padding: 24px 24px 20px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.wpaie-account-section h4 {
+    margin: 0 0 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--plugin-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.01em;
+}
+
+.wpaie-account-section .dashicons {
+    color: var(--plugin-vibrant);
+    font-size: 20px;
+}
+
+.wpaie-account-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.wpaie-account-info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.wpaie-account-info-label {
+    font-weight: 600;
+    color: var(--plugin-primary);
+    letter-spacing: 0.01em;
+}
+
+.wpaie-account-info-value {
+    color: var(--plugin-accent);
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    letter-spacing: 0.02em;
+}
+
+.wpaie-account-section.wpaie-usage-stats {
+    border-left-color: var(--plugin-vibrant);
+    background: var(--plugin-light_pink);
+    background: color-mix(in srgb, var(--plugin-light_pink) 85%, #ffffff 15%);
+}
+
+.wpaie-account-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--plugin-border);
+}
+
+.wpaie-account-actions .button,
+.wpaie-account-notice .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: calc(var(--plugin-border-radius) / 1.5);
+    border-width: 1px;
+    border-color: var(--plugin-border);
+    color: var(--plugin-primary);
+    background: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    width: auto !important;
+    flex: none !important;
+    vertical-align: middle !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+}
+
+.wpaie-account-actions .button:hover,
+.wpaie-account-actions .button:focus,
+.wpaie-account-notice .button:hover,
+.wpaie-account-notice .button:focus {
+    border-color: var(--plugin-vibrant);
+    color: var(--plugin-vibrant);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(236, 72, 153, 0.18);
+}
+
+.wpaie-account-actions .button.button-primary,
+.wpaie-account-notice .button.button-primary {
+    background: linear-gradient(135deg, var(--plugin-primary), var(--plugin-vibrant));
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+    display: inline-flex !important;
+    width: auto !important;
+    flex: none !important;
+}
+
+.wpaie-account-actions .button.button-primary:hover,
+.wpaie-account-actions .button.button-primary:focus,
+.wpaie-account-notice .button.button-primary:hover,
+.wpaie-account-notice .button.button-primary:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.22);
+}
+
+.wpaie-account-info-value span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wpaie-account-info-value span::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.85;
+}
